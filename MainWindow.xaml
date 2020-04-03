@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
         xmlns:local="clr-namespace:WPF"
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -18,163 +19,216 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
     
 
-    Title="HomePage" Height="2000" Width="1943" Loaded="Window_Loaded">
+    Title="HuncaLife" Height="3000" Width="1943" Loaded="Window_Loaded" Icon="Images/icon.png">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
-        <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
-            <Grid>
-                <Label VerticalAlignment="Top" Height="100" Margin="200
+            <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
+                <Grid>
+                    <Label VerticalAlignment="Top" Height="100" Margin="150
                    ,50,0,0" HorizontalAlignment="Left" Width="250">
-                    <Label.Background>
-                        <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
-                    </Label.Background>
-                </Label>
+                        <Label.Background>
+                            <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
+                        </Label.Background>
+                    </Label>
 
-                
-        
-                <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50">
-                    <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
-                </Button>
-                <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1200,110,0,0">Ara</Label>
-                
-                <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
-                    <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
-                </Button>
-                <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1290,110,0,0" Content="Katalog"/>
 
-                <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50">
-                    <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
-                </Button>
-                <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1390,110,0,0">Sepet</Label>
-            </Grid>
-          
-            <Separator Name="MySeparator" 
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1200,110,0,0">Ara</Label>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1290,110,0,0" Content="Katalog"/>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1390,110,0,0">Sepet</Label>
+                </Grid>
+
+                <Separator Name="MySeparator" 
                Height="4"
-               Width="1312"
+               Width="1360"
                HorizontalAlignment="Stretch"                   
-               Background="#FFA89E9E" Margin="150,10,100,0"  Visibility="Visible" >
-                <Separator.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform />
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Separator.RenderTransform>
-            </Separator>
-            
-            <!--menu-->
-            <StackPanel x:Name="menu" Orientation="Horizontal" Width="1140" Margin="0,0,50,0">
+               Background="#FFA89E9E" Margin="150,10,90,0"  Visibility="Visible" >
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform />
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
 
-                <DockPanel Width="1140">
+                <!--menu-->
+                <StackPanel x:Name="menu" Orientation="Horizontal" Width="1140" Margin="0,0,50,0">
 
-                    <Menu IsMainMenu="True" FontSize="13" >
+                    <DockPanel Width="1140">
 
-                        <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
-                        <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="sekiz" Header="OUTLET" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                        <MenuItem x:Name="dokuz" Header="FIRSAT KÖŞESİ" Margin="50,0,0,0" Padding="2,0,0,0" Foreground="Red"></MenuItem>
+                        <Menu IsMainMenu="True" FontSize="13" FontWeight="ExtraBold" Background="White">
 
-                    </Menu>
-                </DockPanel>
+                            <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="sekiz" Header="OUTLET" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="dokuz" Header="FIRSAT KÖŞESİ" Margin="50,0,0,0" Padding="2,0,0,0" Foreground="Red"></MenuItem>
+
+                        </Menu>
+                    </DockPanel>
+
+
+                </StackPanel>
+
+
 
 
             </StackPanel>
 
-
-
-
-        </StackPanel>
-            
             <!--slider-->
-        <StackPanel HorizontalAlignment="Stretch" >
-      
+            <StackPanel >
 
-            <Image>
+                <Grid >
+                    <Image Name="picHolder" Stretch="Uniform"   Source="pics/1.jpg" Height="700" />
+                    <Button Height="100" Width="100" Click="goNext" Background="{x:Null}" BorderBrush="{x:Null}"  Margin="1800,0,0,10" Opacity="0.5" >
+                        <materialDesign:PackIcon Kind="ArrowRight" Width="80" Height="100"/>
+                    </Button>
+                    <Button  Height="100" Width="100" Click="goBack" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,1800,0" Opacity="0.5" >
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="80" Height="100"/>
+                    </Button>
+                </Grid>
+
+                <!--<Image>
                 <Image.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
                         <BeginStoryboard>
                             <Storyboard RepeatBehavior="Forever">
 
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source"
-                                                   Duration="0:0:3">
+                                                   Duration="0:0:5">
 
                                     <DiscreteObjectKeyFrame KeyTime="0:0:0">
                                         <DiscreteObjectKeyFrame.Value>
-                                            <BitmapImage UriSource="Images/Koala.jpg"/>
+                                            <BitmapImage UriSource="Images/skin-perfect-dynalift-20200331215953.jpg"/>
                                         </DiscreteObjectKeyFrame.Value>
                                     </DiscreteObjectKeyFrame>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:1">
-                                        <DiscreteObjectKeyFrame.Value>
-                                            <BitmapImage UriSource="Images/Penguins.jpg" />
-                                        </DiscreteObjectKeyFrame.Value>
-                                    </DiscreteObjectKeyFrame>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:2">
-                                        <DiscreteObjectKeyFrame.Value>
-                                            <BitmapImage UriSource="Images/skin-perfect-dynalift-20200331215953.jpg" />
-                                        </DiscreteObjectKeyFrame.Value>
-                                    </DiscreteObjectKeyFrame>
+                                   
                                 </ObjectAnimationUsingKeyFrames>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                 </Image.Triggers>
-                </Image>
-        </StackPanel>
+                </Image>-->
+            </StackPanel>
             <StackPanel Margin="200,50,200,0">
-            <Grid>
-            <!--image-->
-                
-                <Grid.ColumnDefinitions>
+                <Grid>
+                    <!--image-->
+
+                    <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
-                        
+
                         <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                        
-                <Grid.RowDefinitions>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
                     <Button  Grid.Row="1" Width="550" Height="416" Margin="150,50,0,50">
                         <Button.Background>
-                            <ImageBrush ImageSource ="yeni-temsilcilerimize-ozel-20200331011421.jpg" ></ImageBrush>
+                            <ImageBrush ImageSource ="Images/yeni-temsilcilerimize-ozel-20200331011421.jpg" ></ImageBrush>
                         </Button.Background>
                     </Button>
                     <Button Grid.Column="1" Grid.Row="1" Width="555" Height="416" Margin="0,0,150,0">
                         <Button.Background>
-                            <ImageBrush ImageSource ="ayin-urunu-20191023102253.jpg" ></ImageBrush>
+                            <ImageBrush ImageSource ="Images/ayin-urunu-20191023102253.jpg" ></ImageBrush>
                         </Button.Background>
                     </Button>
                     <Button  Grid.Row="4" Width="555" Height="416" Margin="150,0,0,0">
                         <Button.Background>
-                            <ImageBrush ImageSource ="korona-20200330130101.jpg" ></ImageBrush>
+                            <ImageBrush ImageSource ="Images/korona-20200330130101.jpg" ></ImageBrush>
                         </Button.Background>
                     </Button>
                     <Button Grid.Column="1" Grid.Row="2" Width="555" Height="416" Margin="0,0,150,0">
                         <Button.Background>
-                            <ImageBrush ImageSource ="ayin-kampanyasi-20200331011118.jpg" ></ImageBrush>
+                            <ImageBrush ImageSource ="Images/ayin-kampanyasi-20200331011118.jpg" ></ImageBrush>
                         </Button.Background>
                     </Button>
                     <Button  Grid.ColumnSpan="2" Height="440" Width="1175">
                         <Button.Background>
-                            <ImageBrush ImageSource ="20190711-temsilcimiz-olun.jpg" ></ImageBrush>
+                            <ImageBrush ImageSource="20190711-temsilcimiz-olun.jpg"  ></ImageBrush>
                         </Button.Background>
                     </Button>
                 </Grid>
             </StackPanel>
 
-            
-            
-            
-            
+            <!--urunler-->
+            <Grid Margin="390,100,390,0" Height="450" >
+                <!--<Label Content="ÜRÜNLER" Margin="0,10,1000,390" FontWeight="Bold" FontSize="17px"/>-->
+
+                <!--<StackPanel HorizontalAlignment="Stretch" Margin="658,0,0,400">-->
+
+                <TabControl Margin="10" BorderBrush="WhiteSmoke" TabStripPlacement="Top "  > 
+                        <TabControl.Resources>
+                            <Style TargetType="TabItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TabItem">
+                                            <Border Name="Border"  BorderBrush="{x:Null}" Background="{x:Null}" CornerRadius="4,4,0,0" Margin="2,0">
+                                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                                
+                                            </Trigger>
+                                                <Trigger Property="IsSelected" Value="False">
+                                                    <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                                </Trigger>
+                                         
+                                        </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+                   
+                    <TabItem Header="Yeni Çıkanlar">
+                        <StackPanel Margin="0,25,0,100">
+                        <TextBlock>helooooo</TextBlock>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Popüler Ürünler" >
+                        <StackPanel Margin="0,25,0,100">
+                            <TextBlock>hiiiii</TextBlock>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Fırsat Ürünleri" />
+                    </TabControl>
+                
+                <Separator Margin="0,3,0,390"/>
+                <!--<StackPanel Height="351" Margin="10,74,0,24" HorizontalAlignment="Stretch">-->
+        <!--</StackPanel>-->
+
+                <!--</StackPanel>-->
+            </Grid>
+
+
+
         </StackPanel>
-        </ScrollViewer >
+    </ScrollViewer >
 
 </Window>
