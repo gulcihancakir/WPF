@@ -104,6 +104,9 @@
     <Compile Include="Product.cs">
       <DependentUpon>WebAPIModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sampuan.xaml.cs">
+      <DependentUpon>Sampuan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WebAPIModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +139,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Sampuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

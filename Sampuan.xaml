@@ -1,0 +1,84 @@
+﻿<Window x:Class="WPF.Sampuan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="HuncaLife" Height="3000" Width="1943"  Icon="Images/icon.png">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
+        <StackPanel Orientation="vertical">
+
+            <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
+                <Grid>
+                    <Label VerticalAlignment="Top" Height="100" Margin="150
+                   ,50,0,0" HorizontalAlignment="Left" Width="250">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
+                        </Label.Background>
+                    </Label>
+
+
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1200,110,0,0">Ara</Label>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1290,110,0,0" Content="Katalog"/>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1390,110,0,0">Sepet</Label>
+                </Grid>
+
+                <Separator Name="MySeparator" 
+               Height="4"
+               Width="1360"
+               HorizontalAlignment="Stretch"                   
+               Background="#FFA89E9E" Margin="150,10,90,0"  Visibility="Visible" >
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform />
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
+
+                <!--menu-->
+                <StackPanel x:Name="menu" Orientation="Horizontal" Width="1140" Margin="0,0,50,0">
+
+                    <DockPanel Width="1140">
+
+                        <Menu IsMainMenu="True" FontSize="13" FontWeight="ExtraBold" Background="White">
+
+                            <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="sekiz" Header="OUTLET" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="dokuz" Header="FIRSAT KÖŞESİ" Margin="50,0,0,0" Padding="2,0,0,0" Foreground="Red"></MenuItem>
+
+                        </Menu>
+                    </DockPanel>
+
+
+                </StackPanel>
+
+
+
+
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

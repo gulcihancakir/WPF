@@ -68,8 +68,15 @@ namespace WPF
 
             // change the picture according to the i's value
             picHolder.Source = new BitmapImage(new Uri(@"pics/" + i + ".jpg", UriKind.Relative));
-            Console.WriteLine("hkweşlsözxöcvmbşk");
+            
+        }
 
+        private void opensampuanwindow(object sender, RoutedEventArgs e)
+        {
+            Sampuan sampuan = new Sampuan();
+            this.Visibility = Visibility.Hidden;
+            sampuan.Show();
+            
         }
     }
     }

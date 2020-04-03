@@ -75,7 +75,12 @@
                             <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
                             <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
                             <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0">
+                                <Menu>
+                                    <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
+                                </Menu>
+
+                            </MenuItem>
                             <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
                             <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
                             <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
