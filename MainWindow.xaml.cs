@@ -76,7 +76,13 @@ namespace WPF
             Sampuan sampuan = new Sampuan();
             this.Visibility = Visibility.Hidden;
             sampuan.Show();
+
+        }
+
+        private void opensearchbox(object sender, RoutedEventArgs e)
+        {
             
+
         }
     }
     }

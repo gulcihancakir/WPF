@@ -202,6 +202,7 @@
     <Resource Include="tabmenupic\firsat_urunu3.PNG" />
     <Resource Include="20190711-temsilcimiz-olun.jpg" />
     <Resource Include="Images\icon.png" />
+    <Resource Include="20180101_hair.jpg" />
     <Content Include="WebAPIModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WebAPIModel.Context.cs</LastGenOutput>
