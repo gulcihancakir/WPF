@@ -108,6 +108,32 @@
             </Grid>
 
 
+            <!--<Grid Margin="10" Height="446">-->
+
+
+
+            <StackPanel Margin="15">
+                <!--<DataGrid x:Name="DTGridEmp"  AutoGenerateColumns="False" Margin="0,13,0,0" Width="Auto" Height="568"  
+                       
+                          ColumnHeaderHeight="70"  
+                          FlowDirection="RightToLeft" SelectedIndex="0"   
+                          ColumnWidth=" 243" IsReadOnly="True" 
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Context" Binding="{Binding Context}"  />
+                        <DataGridTemplateColumn Header="Photo" Width="Auto" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Path=Images}" Width="40" Height="40" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>-->
+                <!--<Label Content="{Binding Path=Name}" Height="170"/>-->
+            </StackPanel>
+           
         </StackPanel>
     </ScrollViewer>
 </Window>

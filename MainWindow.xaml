@@ -104,7 +104,7 @@
             <StackPanel >
 
                 <Grid >
-                    <Image Name="picHolder" Stretch="Uniform"   Source="pics/1.jpg" Height="700" />
+                    <Image Name="picHolder" Stretch="Uniform"   Source="pics/1.jpg" Height="700"  />
                     <Button Height="100" Width="100" Click="goNext" Background="{x:Null}" BorderBrush="{x:Null}"  Margin="1800,0,0,10" Opacity="0.5" >
                         <materialDesign:PackIcon Kind="ArrowRight" Width="80" Height="100"/>
                     </Button>
