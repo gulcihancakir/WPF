@@ -45,7 +45,6 @@ namespace WPF
                 //  DTGridEmp.ItemsSource = items;
 
             }
-        }
 
         private void Create()
         {
@@ -54,12 +53,21 @@ namespace WPF
                                        select new Product
                                        {
                                            Name = a.Name
-                                        
+
                                        }
            ).ToList();
-           
+
         }
 
-
+        private void sepet_window_open(object sender, RoutedEventArgs e)
+        {
+            SepetWindow sepetWindow = new SepetWindow();
+            this.Visibility = Visibility.Hidden;
+            sepetWindow.Show();
+        }
     }
+   
+
+
 }
+

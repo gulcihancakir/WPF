@@ -107,6 +107,9 @@
     <Compile Include="Sampuan.xaml.cs">
       <DependentUpon>Sampuan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SepetWindow.xaml.cs">
+      <DependentUpon>SepetWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WebAPIModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +143,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Sampuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SepetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +210,17 @@
     <Resource Include="20190711-temsilcimiz-olun.jpg" />
     <Resource Include="Images\icon.png" />
     <Resource Include="20180101_hair.jpg" />
+    <Resource Include="anasayfa_pics\1.PNG" />
+    <Resource Include="anasayfa_pics\10.PNG" />
+    <Resource Include="anasayfa_pics\11.PNG" />
+    <Resource Include="anasayfa_pics\2.PNG" />
+    <Resource Include="anasayfa_pics\3.PNG" />
+    <Resource Include="anasayfa_pics\4.PNG" />
+    <Resource Include="anasayfa_pics\5.PNG" />
+    <Resource Include="anasayfa_pics\6.PNG" />
+    <Resource Include="anasayfa_pics\7.PNG" />
+    <Resource Include="anasayfa_pics\8.PNG" />
+    <Resource Include="anasayfa_pics\9.PNG" />
     <Content Include="WebAPIModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WebAPIModel.Context.cs</LastGenOutput>

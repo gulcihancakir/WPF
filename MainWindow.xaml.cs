@@ -85,6 +85,13 @@ namespace WPF
 
         }
 
+        private void sepet_window_open(object sender, RoutedEventArgs e)
+        {
+            SepetWindow sepetWindow = new SepetWindow();
+            this.Visibility = Visibility.Hidden;
+            sepetWindow.Show();
+        }
+
 
     }
     }

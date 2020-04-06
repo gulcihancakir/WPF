@@ -15,12 +15,11 @@
      TextElement.FontSize="13"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+     
     
         WindowStartupLocation="Manual"
         Left="0" Top="0"
-    Title="HuncaLife" Height="4000" Width="1943" Loaded="Window_Loaded" Icon="Images/icon.png" >
+    Title="HuncaLife" Height="4000" Width="1943" Loaded="Window_Loaded" Icon="Images/icon.png" Background="white">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
@@ -39,17 +38,17 @@
                     <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50" Click="opensearchbox">
                         <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
                     </Button>
-                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1200,110,0,0">Ara</Label>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1190,110,0,0">Ara</Label>
 
                     <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
                         <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
                     </Button>
-                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1290,110,0,0" Content="Katalog"/>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1280,110,0,0" Content="Katalog"/>
 
-                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50">
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50" Click="sepet_window_open">
                         <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
                     </Button>
-                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1390,110,0,0">Sepet</Label>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1380,110,0,0">Sepet</Label>
                 </Grid>
 
                 <Separator Name="MySeparator" 
@@ -178,13 +177,13 @@
                 </Grid>
             </StackPanel>
 
-            <!--urunler-->
-            <Grid Margin="390,100,390,0" Height="450" >
+            <!--urunler   -->
+            <Grid Margin="390,100,390,0" Height="550" >
                 <!--<Label Content="ÜRÜNLER" Margin="0,10,1000,390" FontWeight="Bold" FontSize="17px"/>-->
 
                 <!--<StackPanel HorizontalAlignment="Stretch" Margin="658,0,0,400">-->
 
-                <TabControl Margin="10" BorderBrush="WhiteSmoke" TabStripPlacement="Top "  >
+                <TabControl Margin="10,10,10,0" BorderBrush="{x:Null}" TabStripPlacement="Top "  >
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">
@@ -199,11 +198,11 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsSelected" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                                <Setter TargetName="Border" Property="Background" Value="White" />
 
                                             </Trigger>
                                             <Trigger Property="IsSelected" Value="False">
-                                                <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                                <Setter TargetName="Border" Property="Background" Value="White" />
                                             </Trigger>
 
                                         </ControlTemplate.Triggers>
@@ -213,30 +212,137 @@
                         </Style>
                     </TabControl.Resources>
 
-                    <TabItem Header="Yeni Çıkanlar">
-                        <StackPanel Margin="0,25,0,100">
-                            <TextBlock>helooooo</TextBlock>
-                        </StackPanel>
+                    <TabItem Header="Yeni Çıkanlar" >
+                        <Grid>
+                            <!--image-->
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <!--<StackPanel Margin="0,25,0,30" Orientation="Horizontal">-->
+                            <Button Height="414" BorderBrush="WhiteSmoke" Margin="10,48,10,49" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/1.PNG"/>
+                                </Button.Background>
+                            </Button>
+
+                            <Button  Width="272" Height="414" Grid.Column="1"  BorderBrush="WhiteSmoke" Margin="10,48,10,49">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/2.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button  Width="272" Height="414" Grid.Column="2"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/3.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Width="272" Height="414" Grid.Column="3"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/4.PNG"/>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+                        <!--</StackPanel>-->
                     </TabItem>
                     <TabItem Header="Popüler Ürünler" >
-                        <StackPanel Margin="0,25,0,100">
-                            <TextBlock>hiiiii</TextBlock>
-                        </StackPanel>
+                        <Grid>
+                            <!--image-->
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <!--<StackPanel Margin="0,25,0,30" Orientation="Horizontal">-->
+                            <Button Height="414" BorderBrush="WhiteSmoke" Margin="10,48,10,49" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/5.PNG"/>
+                                </Button.Background>
+                            </Button>
+
+                            <Button  Width="272" Height="414" Grid.Column="1"  BorderBrush="WhiteSmoke" Margin="10,48,10,49">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/6.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button  Width="272" Height="414" Grid.Column="2"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/7.PNG"/>
+                                </Button.Background>
+                            </Button>
+                           
+                        </Grid>
                     </TabItem>
-                    <TabItem Header="Fırsat Ürünleri" />
+                    <TabItem Header="Fırsat Ürünleri">
+                        <Grid>
+                            <!--image-->
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <!--<StackPanel Margin="0,25,0,30" Orientation="Horizontal">-->
+                            <Button Height="414" BorderBrush="WhiteSmoke" Margin="10,48,10,49" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/1.PNG"/>
+                                </Button.Background>
+                            </Button>
+
+                            <Button  Width="272" Height="414" Grid.Column="1"  BorderBrush="WhiteSmoke" Margin="10,48,10,49">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/8.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button  Width="272" Height="414" Grid.Column="2"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/9.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Width="272" Height="414" Grid.Column="3"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/10.PNG"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Width="272" Height="414" Grid.Column="3"  Margin="10,48,10,49"  BorderBrush="WhiteSmoke">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="anasayfa_pics/11.PNG"/>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+                    </TabItem>
                 </TabControl>
 
-                <Separator Margin="0,3,0,390"/>
+                <!--<Separator Margin="0,3,0,390"/>-->
                 <!--<StackPanel Height="351" Margin="10,74,0,24" HorizontalAlignment="Stretch">-->
                 <!--</StackPanel>-->
 
                 <!--</StackPanel>-->
             </Grid>
-
-            <Grid Height="400" Background="black">
+            <Grid Height="400" Background="black" Margin="0,100,0,0">
                 <Grid Width="1200">
 
-                    <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20">Bizi Sosyal Medyada Takip Edin</TextBlock>
+                    <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20"><Run Text="Bizi Sosyal Medyada Takip Edin"/></TextBlock>
                     <Separator Foreground="White"  HorizontalAlignment="Left" Width="40" Margin="0,0,0,450"/>
 
 
@@ -248,39 +354,49 @@
                     <StackPanel Orientation="Horizontal"  Height="60" HorizontalAlignment="Left" Width="1199" Margin="0,70,0,270" >
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                             <Hyperlink NavigateUri="https://www.facebook.com/HuncaLife?fref=ts" Foreground="#FF040404" >
-                                <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
                             </Hyperlink>
                         </Button>
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                             <Hyperlink NavigateUri="https://twitter.com/HuncaLife" Foreground="#FF040404" >
-                                <materialDesign:PackIcon Kind="Twitter" Foreground="White" Height="25" Width="30"/>
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Twitter" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
                             </Hyperlink>
                         </Button>
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                             <Hyperlink NavigateUri="https://tr.pinterest.com/huncalife/" Foreground="#FF040404" >
-                                <materialDesign:PackIcon Kind="Pinterest" Foreground="White" Height="25" Width="30"/>
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Pinterest" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
                             </Hyperlink>
                         </Button>
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                             <Hyperlink NavigateUri="https://www.instagram.com/huncalife/" Foreground="#FF040404" >
-                                <materialDesign:PackIcon Kind="instagram" Foreground="White" Height="25" Width="30"/>
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="instagram" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
                             </Hyperlink>
                         </Button>
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                             <Hyperlink NavigateUri="https://www.youtube.com/user/HuncaLifeDunyasi" Foreground="#FF040404" >
-                                <materialDesign:PackIcon Kind="Youtube" Foreground="White" Height="25" Width="30"/>
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Youtube" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
                             </Hyperlink>
                         </Button>
                     </StackPanel>
                 </Grid>
 
-                <TextBox  Foreground="White" Margin="1370,52,0,307" FontSize="20">Bize Ulaşın</TextBox>
+                <TextBox  Foreground="White" Margin="1370,52,0,307" FontSize="20" Text="Bize Ulaşın"/>
                 <Separator Foreground="White"  Margin="1000,20,0,475"  Width="30" />
                 <StackPanel Orientation="Horizontal" Margin="1368,98,346,175">
                     <Label >
                         <materialDesign:PackIcon Kind="Call" Foreground="white" Width="20" Height="20"/>
                     </Label>
-                    <TextBlock FontSize="20" Foreground="White" Margin="5,5,0,0" Width="113">0850 333 20 30</TextBlock>
+                    <TextBlock FontSize="20" Foreground="White" Margin="5,5,0,0" Width="113"><Run Text="0850 333 20 30"/></TextBlock>
                 </StackPanel>
 
 
