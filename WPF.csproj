@@ -110,6 +110,9 @@
     <Compile Include="SepetWindow.xaml.cs">
       <DependentUpon>SepetWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TemsilciGirisi.xaml.cs">
+      <DependentUpon>TemsilciGirisi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WebAPIModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SepetWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemsilciGirisi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

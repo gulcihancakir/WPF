@@ -23,8 +23,19 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
+
             <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
                 <Grid>
+                    <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
+
+                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}">
+                            Temsilci Ol
+                        </Button>
+                      
+                        <Button Foreground="Orange" FontSize="15" Width="145" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_girisi">
+                            Temsilci Girişi
+                        </Button>
+                    </StackPanel>
                     <Label VerticalAlignment="Top" Height="100" Margin="150
                    ,50,0,0" HorizontalAlignment="Left" Width="250">
                         <Label.Background>
@@ -183,7 +194,7 @@
 
                 <!--<StackPanel HorizontalAlignment="Stretch" Margin="658,0,0,400">-->
 
-                <TabControl Margin="10,10,10,0" BorderBrush="{x:Null}" TabStripPlacement="Top "  >
+                <TabControl Margin="10,10,10,0" BorderBrush="{x:Null}" TabStripPlacement="Top"  >
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">
@@ -195,15 +206,18 @@
                                         HorizontalAlignment="Center"
                                         ContentSource="Header"
                                         Margin="10,2"/>
+
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsSelected" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="White" />
+                                                <Setter TargetName="Border" Property="Background" Value="Orange" />
 
                                             </Trigger>
                                             <Trigger Property="IsSelected" Value="False">
                                                 <Setter TargetName="Border" Property="Background" Value="White" />
                                             </Trigger>
+                                            
+
 
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -284,7 +298,7 @@
                                     <ImageBrush ImageSource="anasayfa_pics/7.PNG"/>
                                 </Button.Background>
                             </Button>
-                           
+
                         </Grid>
                     </TabItem>
                     <TabItem Header="Fırsat Ürünleri">

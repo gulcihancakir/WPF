@@ -1,0 +1,64 @@
+﻿<Window x:Class="WPF.TemsilciGirisi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+         
+       
+      
+     Height="650" Width="560" AutomationProperties.IsOffscreenBehavior="Default" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid AutomationProperties.IsOffscreenBehavior="Default" >
+
+
+
+        <Grid Margin="50">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+            <Label Height="40" FontSize="20" Margin="0,5,0,13"  >
+                Giriş Yap
+            </Label>
+            <Separator  Width="90" HorizontalAlignment="Left" Margin="0,35,0,0" Height="4"  Background="#FFC57B7B">
+             
+            </Separator>
+            <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                <FlowDocument >
+                    <Paragraph >
+                        <Run Text="Esnek çalışma saatleriyle ek gelir elde etmek, Temsilcilere özel fırsatları keşfetmek için bugün Huncalife'a katıl!"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label  FontSize="20" Content="Temsilci Numarası" Grid.Row="2" Margin="0,10,0,48" Grid.RowSpan="2"/>
+            <TextBox x:Name="temsilci_no_box" Grid.Row="3" BorderBrush="Gray"></TextBox>
+
+            <Label FontSize="20" Margin="0,10,0,0" Content="Şifre" Grid.Row="4" />
+            <TextBox x:Name="temsilci_sifre" Grid.Row="5" BorderBrush="Gray"></TextBox>
+            <CheckBox Grid.Row="6" FontSize="15" Margin="0,10,0,0">Beni Hatırla</CheckBox>
+            <Button Grid.Row="7" BorderBrush="Orange" Background="White"  Foreground="orange" FontSize="18">Giriş Yap</Button>
+            <Label Grid.Row="8" Margin="0,10,0,0">Henüz bir hesabınız yok mu? Hemen temsilci olmak için tıklayın!</Label>
+            <Button  Grid.Row="9"   BorderBrush="orange" Background="Orange"  Foreground="White" FontSize="18">Temsilci Ol</Button>
+
+        </Grid>
+    </Grid>
+</Window>

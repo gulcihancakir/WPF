@@ -92,7 +92,12 @@ namespace WPF
             sepetWindow.Show();
         }
 
-
+        private void temsilci_girisi(object sender, RoutedEventArgs e)
+        {
+            TemsilciGirisi temsilciGirisi = new TemsilciGirisi();
+            
+            temsilciGirisi.Show();
+        }
     }
     }
 
