@@ -1,0 +1,276 @@
+﻿<Window x:Class="WPF.TemsilciOlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+         xmlns:Behaviors="clr-namespace:Microsoft.Toolkit.Uwp.UI.Extensions.Markup;assembly=Microsoft.Toolkit.Uwp.UI"
+        
+        xmlns:local="clr-namespace:WPF"
+         
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+       WindowStartupLocation="Manual"
+        Left="0" Top="0"
+    Title="HuncaLife" Height="4000" Width="1943"  Icon="Images/icon.png" Background="white" Loaded="Window_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
+        <StackPanel Orientation="vertical">
+
+
+            <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
+
+                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}">
+                            Temsilci Ol
+                        </Button>
+
+                        <Button Foreground="Orange" FontSize="15" Width="145" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_girisi">
+                            Temsilci Girişi
+                        </Button>
+                    </StackPanel>
+                    <Label VerticalAlignment="Top" Height="100" Margin="150
+                   ,50,0,0" HorizontalAlignment="Left" Width="250">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
+                        </Label.Background>
+                    </Label>
+
+
+
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50" Click="opensearchbox">
+                        <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1190,110,0,0">Ara</Label>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
+                        <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1280,110,0,0" Content="Katalog"/>
+
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50" Click="sepet_window_open">
+                        <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
+                    </Button>
+                    <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1380,110,0,0">Sepet</Label>
+                </Grid>
+
+                <Separator Name="MySeparator" 
+               Height="4"
+               Width="1360"
+               HorizontalAlignment="Stretch"                   
+               Background="#FFA89E9E" Margin="150,10,90,0"  Visibility="Visible" >
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform />
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
+
+                <!--menu-->
+                <StackPanel x:Name="menu" Orientation="Horizontal" Width="1140" Margin="0,0,50,0">
+
+                    <DockPanel Width="1140">
+
+                        <Menu IsMainMenu="True" FontSize="13" FontWeight="ExtraBold" Background="White">
+
+                            <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0">
+                                <Menu>
+                                    <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
+                                </Menu>
+
+                            </MenuItem>
+                            <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
+                            <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="sekiz" Header="OUTLET" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                            <MenuItem x:Name="dokuz" Header="FIRSAT KÖŞESİ" Margin="50,0,0,0" Padding="2,0,0,0" Foreground="Red"></MenuItem>
+
+                        </Menu>
+                    </DockPanel>
+
+
+                </StackPanel>
+            </StackPanel>
+            <Separator/>
+            <Grid Height="440">
+                <Image Source="kayit_ol-ust_banner.jpg" />
+            </Grid>
+            <Separator Foreground="Gray"/>
+            <Grid Height="1057" >
+                <Grid  Margin="413,10,1285,493" >
+
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="212*" />
+
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        
+
+
+
+
+                    </Grid.RowDefinitions>
+                    <Label FontSize="12" Margin="0,5,0,31" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">Ad</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1">
+                        <TextBox x:Name="temsilciolad_textbox" />
+                    </Border>
+
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="2" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">Soyad</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="3">
+                        <TextBox x:Name="temsilciolsoyad_textbox" Margin="0,13,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    </Border>
+
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="5" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">TC Kimlik No</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="6">
+                        <TextBox x:Name="temsilcioltc_textbox" />
+                    </Border>
+
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="7" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">Doğum Tarihi Gün/Ay/Yıl</Label>
+                    <Grid Grid.Row="8" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Name="combobox_gun" Height="36" Margin="10,-2,14,-2" Text="1"  />
+                        <ComboBox  Name="combobox_ay" Height="36" Grid.ColumnSpan="2" Margin="70,-2,10,-2"/>
+                        <ComboBox   Name="combobox_yil" Height="36"  Grid.Column="2" Margin="0,-2,4,-2" HorizontalAlignment="Right" Width="75"/>
+                    </Grid>
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="9" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">Cinsiyet</Label>
+                    <ComboBox Name="combobox_cinsiyet" Grid.Row="10" Height="28" Margin="0,4" Grid.ColumnSpan="2"></ComboBox>
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="11" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">E-Posta</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="12">
+                        <TextBox x:Name="temsilcioleposta_textbox" />
+                    </Border>
+
+                    <Label FontSize="12" Margin="0,5,0,31" Grid.Row="13" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2">Telefon Numarası</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="14">
+                        <TextBox x:Name="temsilciolpnumber_textbox"/>
+                    </Border>
+
+
+
+                </Grid>
+
+
+                <Grid Margin="701,0,927,511">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="140" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+
+
+
+                    </Grid.RowDefinitions>
+                    <Label Height="36" FontSize="12" Margin="0,5,0,13"  FontWeight="Bold">İl</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1">
+                        <TextBox Height="36" x:Name="temsilciolil_textbox" />
+                    </Border>
+
+                    <Label Height="36" FontSize="12" Margin="0,5,0,13" Grid.Row="2"  FontWeight="Bold">İlçe</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="3">
+                        <TextBox Height="36" x:Name="temsilciolilce_textbox"/>
+                    </Border>
+
+                    <Label Height="36" FontSize="12" Margin="0,5,0,13" Grid.Row="4"  FontWeight="Bold">Adres</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="5">
+                        <TextBox Height="140" x:Name="temsilcioladres_textbox" />
+                    </Border>
+
+                    <Label Height="36" FontSize="12" Margin="0,10,0,26" Grid.Row="6"  FontWeight="Bold" Grid.RowSpan="2">Şifre</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="7">
+                        <!--<TextBox Height="36" x:Name="temsilciolsifre_textbox" />-->
+                        <PasswordBox x:Name="temsilciolsifre" PasswordChar="*"  />
+
+                    </Border>
+
+                    <Label Height="36" FontSize="12" Margin="0,5,0,13" Grid.Row="8"  FontWeight="Bold">Şifre Tekrar</Label>
+                    <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="9">
+                       
+                        <!--<TextBox Height="36" x:Name="temsilciolsifretekrar_textbox" />-->
+                        <PasswordBox x:Name="temsilciolsifretekrar" PasswordChar="*"   />
+                    </Border>
+
+                    <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="10" Margin="0,0,10,-48" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                        <FlowDocument >
+                            <Paragraph >
+                                <Run Text="Sponsorunuz sistem tarafından otomatik belirlenecektir" Foreground="orange" FontSize="18" FontWeight="bold"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+
+
+
+
+
+                </Grid>
+                <Image Margin="1046,10,277,449" Source="temsilciOl.PNG"/>
+
+                <Grid Margin="10,666,-10,0">
+                    <CheckBox x:Name="checkbox1" Margin="362,10,682,309" >
+                        <TextBlock>
+                            Temsilci Sözleşmesini ve Eklerini okudum, kabul ediyorum.
+                        </TextBlock>
+                    </CheckBox>
+
+                    <CheckBox x:Name="checkbox2" Margin="362,82,682,238"  >
+
+                        <TextBlock><Run Text=" Belirttiğim ve şahsıma ait olan iletişim bilgilerime her türlü ticari elektronik verinin telefon,"/><LineBreak/><Run Text=" çağrı merkezi,elektronik posta,kısa mesaj hizmeti gibi vasıtatalar kullanılarak iletilmesini kabul ediyorum."/></TextBlock>
+                    </CheckBox>
+                    <Button x:Name="kayitol" Height="50" Background="Orange" Foreground="white" BorderBrush="{x:Null}" Margin="988,206,682,135" >KAYIT OL</Button>
+
+                </Grid>
+            </Grid>
+
+
+
+
+
+
+        </StackPanel>
+
+
+    </ScrollViewer>
+</Window>

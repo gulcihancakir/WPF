@@ -9,7 +9,7 @@
         
         WindowStartupLocation="Manual"
         Left="0" Top="0"
-        Title="HuncaLife" Height="3000" Width="1943"  Icon="Images/icon.png">
+        Title="HuncaLife" Height="3000" Width="1943"  Icon="Images/icon.png"   Loaded="Window_Loaded">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
@@ -122,7 +122,14 @@
 
             <!--<Grid Margin="10" Height="446">-->
 
-
+            <Grid Height="480">
+                <!--<DataGrid x:Name="datagrid">
+                    
+                </DataGrid>-->
+                <Label Name="lbl" >
+                    
+                </Label>
+            </Grid>
 
             <StackPanel Margin="15">
                 <!--<DataGrid x:Name="DTGridEmp"  AutoGenerateColumns="False" Margin="0,13,0,0" Width="Auto" Height="568"  

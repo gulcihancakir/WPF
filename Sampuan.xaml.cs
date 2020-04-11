@@ -72,6 +72,23 @@ namespace WPF
 
             temsilciGirisi.Show();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query =
+            from product in data.Products
+           
+            orderby product.Name
+            select new { product.Name, product.Context, product.Price, product.new_Price,product.Images };
+            
+            //datagrid.ItemsSource = query.ToList();
+            
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+               
+            }
+        }
     }
    
 

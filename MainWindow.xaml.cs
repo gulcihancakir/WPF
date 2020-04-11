@@ -98,6 +98,13 @@ namespace WPF
             
             temsilciGirisi.Show();
         }
+
+        private void temsilci_ol(object sender, RoutedEventArgs e)
+        {
+            TemsilciOlWindow temsilciOlWindow = new TemsilciOlWindow();
+
+            temsilciOlWindow.Show();
+        }
     }
     }
 

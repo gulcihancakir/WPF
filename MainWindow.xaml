@@ -28,7 +28,7 @@
                 <Grid>
                     <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
 
-                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_ol">
                             Temsilci Ol
                         </Button>
                       
