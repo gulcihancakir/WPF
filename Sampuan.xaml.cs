@@ -260,9 +260,21 @@ namespace WPF
             temsilciGirisi.Show();
         }
 
-        
+        private void SampuanButton_Click(object sender, RoutedEventArgs e)
+        {
+            Sampuan sampuan = new Sampuan();
+            this.Visibility = Visibility.Hidden;
+            sampuan.Show();
+        }
+        private void temsilci_ol(object sender, RoutedEventArgs e)
+        {
+            TemsilciOlWindow temsilciOlWindow = new TemsilciOlWindow();
+
+            temsilciOlWindow.Show();
+        }
+
     }
-    }
+}
    
 
 

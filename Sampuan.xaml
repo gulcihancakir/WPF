@@ -10,7 +10,7 @@
         
         WindowStartupLocation="Manual"
         Left="0" Top="0"
-        Title="HuncaLife" Height="3000" Width="1943"  Icon="Images/icon.png"   Loaded="Window_Loaded">
+        Title="HuncaLife" Height="3280" Width="1943"  Icon="Images/icon.png"   Loaded="Window_Loaded">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
@@ -18,7 +18,7 @@
                 <Grid>
                     <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
 
-                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_ol">
                             Temsilci Ol
                         </Button>
                         <Canvas>
@@ -118,13 +118,13 @@
 
                 </StackPanel>
             </Grid>
-            <Grid Height="2145">
+            <Grid Height="1977">
                 <!--<DataGrid x:Name="datagrid">
                     
                 </DataGrid>-->
                 <StackPanel x:Name="prodPanel" Margin="543,10,224,42"/>
                 <Grid HorizontalAlignment="Left" Height="1171" Margin="117,10,0,0" VerticalAlignment="Top" Width="421">
-                    <Button Content="Şampuan" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,174,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="Şampuan" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,174,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26" Click="SampuanButton_Click"/>
                     <Button Content="2'si 1 Arada Ürün" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,206,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="31"/>
                     <Button Content="Şekillendirici" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="19,241,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
                     <Button Content="Saç Kremi" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
@@ -147,16 +147,7 @@
                 </Grid>
 
             </Grid>
-
-
-            <!--<Grid Margin="10" Height="446">-->
-
-
-
-
-
-            <!--footer-->
-            <!--<Grid Height="400" Background="black" Margin="0,100,0,0">
+            <Grid Height="400" Background="black" Margin="0">
                 <Grid Width="1200">
 
                     <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20"><Run Text="Bizi Sosyal Medyada Takip Edin"/></TextBlock>
@@ -164,11 +155,11 @@
 
 
 
-                    -->
-            <!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+
+                    <!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                         <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
-                        </Button>-->
-            <!--
+                    </Button>-->
+
 
                     <StackPanel Orientation="Horizontal"  Height="60" HorizontalAlignment="Left" Width="1199" Margin="0,70,0,270" >
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
@@ -221,7 +212,16 @@
 
 
 
-            </Grid>-->
+            </Grid>
+
+
+            <!--<Grid Margin="10" Height="446">-->
+
+
+
+
+
+            <!--footer-->
         </StackPanel>
     </ScrollViewer>
 </Window>
