@@ -31,7 +31,7 @@
                         <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_ol">
                             Temsilci Ol
                         </Button>
-                      
+
                         <Button Foreground="Orange" FontSize="15" Width="145" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_girisi">
                             Temsilci Girişi
                         </Button>
@@ -87,10 +87,10 @@
                             <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
                             <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
                             <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0">
-                                <Menu>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"  Click="menu4_click">
+                                <!--<Menu>
                                     <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
-                                </Menu>
+                                </Menu>-->
 
                             </MenuItem>
                             <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
@@ -104,16 +104,74 @@
 
 
                 </StackPanel>
+               
 
+                   
 
+            
 
 
             </StackPanel>
 
             <!--slider-->
             <StackPanel >
+                <WrapPanel Height="0" Margin="75,0,127,0" Name="dockpanel" Width="1308"  >
 
-                <Grid >
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <Grid Height="143" Width="1404">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+
+                        </Grid.RowDefinitions>
+                        <Label Width="114" FontSize="13" FontWeight="bold" Height="26" Content=" GÜNLÜK BAKIM" />
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left"/>
+                        <Label Content="ÖZEL BAKIM" Grid.Column="1" FontSize="13" FontWeight="bold" Height="26" Margin="35,2,84,2"/>
+                        <Separator Background="Black" Margin="40,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="1"/>
+
+                        <Label Content="SAÇ BOYASI"  Grid.Column="2" Width="114" FontSize="13" FontWeight="bold" Height="26"/>
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="2"/>
+                        <Line X1="0" X2="0" Y1="0" Y2="50" Stroke="Gray" StrokeThickness="0.5" Margin="2,10,10,0" Grid.Column="3" Grid.RowSpan="2"/>
+
+                        <Label Content="İNDİRİMLİ ÜRÜNLER"  Grid.Column="3" FontSize="13" FontWeight="bold" Height="26" Margin="53,2,25,2"/>
+                        <Separator Margin="60,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="3"  Background="Black"/>
+
+
+
+                        <ListBox Height="139"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
+                            <ListBoxItem Selected="ListBoxSampuan_Selected" Content="Şampuan"/>
+                            <ListBoxItem Content="Saç Kremi" />
+                            <ListBoxItem Content="2'si 1 Arada Ürün"/>
+                            <ListBoxItem Content="Şekillendirici"/>
+                        </ListBox>
+
+
+                        <ListBox  Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" Margin="35,3,10,-26">
+                            <ListBoxItem  Content="Maske"/>
+                            <ListBoxItem Content="Serum"/>
+                            <ListBoxItem Content="Durulanmayan Bakım Ürünleri"/>
+
+
+                            <ListBoxItem Content="Saç Maskarası"/>
+                        </ListBox>
+                    </Grid>
+
+                </WrapPanel>
+                <Grid>
+
+
                     <Image Name="picHolder" Stretch="Uniform"   Source="pics/1.jpg" Height="700"  />
                     <Button Height="100" Width="100" Click="goNext" Background="{x:Null}" BorderBrush="{x:Null}"  Margin="1800,0,0,10" Opacity="0.5" >
                         <materialDesign:PackIcon Kind="ArrowRight" Width="80" Height="100"/>
@@ -122,7 +180,7 @@
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="80" Height="100"/>
                     </Button>
                 </Grid>
-
+             
                 <!--<Image>
                 <Image.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
@@ -216,7 +274,7 @@
                                             <Trigger Property="IsSelected" Value="False">
                                                 <Setter TargetName="Border" Property="Background" Value="White" />
                                             </Trigger>
-                                            
+
 
 
                                         </ControlTemplate.Triggers>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:sdk="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
         
         WindowStartupLocation="Manual"
@@ -91,71 +92,69 @@
 
             </StackPanel>
 
-                <Grid>
-                    <Image  Stretch="Uniform"   Source="20180101_hair.jpg" />
-
-                </Grid>
-
-               
-                <Grid  Height="50" Background="#FFF5EFEF"  >
-                    <StackPanel Orientation="Horizontal" Margin="375,0,0,0" >
-                        <Button Width="46" Background="{x:Null}" BorderBrush="{x:Null}" >
-                            <materialDesign:PackIcon Kind="Home"/>
-                        </Button>
-                        <TextBlock Text=">   GÜNLÜK BAKIM   >" Margin="0,15,0,0" FontSize="15" FontWeight="ExtraLight" Foreground="Black"/>
-                        <TextBlock Text="Şampuan" Margin="10,15,0,0" FontSize="12" FontWeight="DemiBold" Foreground="Black"/>
-                    </StackPanel>
-                </Grid>
             <Grid>
-                <StackPanel Orientation="Vertical" Width="1140"  Margin="0,50,0,0">
+                <Image  Stretch="Uniform"   Source="20180101_hair.jpg" />
 
-                    <Label Content="GÜNLÜK" FontWeight="Bold" FontSize="14"/>
-                    <Label Content="BAKIM-" FontWeight="Bold" FontSize="14"/>
-                    <Label Content="ŞAMPUAN" FontWeight="Bold" FontSize="14"/>
-                    <Separator Width="80"  HorizontalAlignment="Left"  Background="Orange"  />
-                   
+            </Grid>
+
+
+            <Grid  Height="50" Background="#FFF5EFEF"  >
+                <StackPanel Orientation="Horizontal" Margin="375,0,0,0" >
+                    <Button Width="46" Background="{x:Null}" BorderBrush="{x:Null}" >
+                        <materialDesign:PackIcon Kind="Home"/>
+                    </Button>
+                    <TextBlock Text=">   GÜNLÜK BAKIM   >" Margin="0,15,0,0" FontSize="15" FontWeight="ExtraLight" Foreground="Black"/>
+                    <TextBlock Text="Şampuan" Margin="10,15,0,0" FontSize="12" FontWeight="DemiBold" Foreground="Black"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel Orientation="Vertical"  Margin="160,50,397,0">
+                    <Label Content="GÜNLÜK" FontWeight="Bold" FontSize="20"/>
+                    <Label Content="BAKIM-" FontWeight="Bold" FontSize="20"/>
+                    <Label Content="ŞAMPUAN" FontWeight="Bold" FontSize="20"/>
+                    <Separator Width="120" FontWeight="ExtraBold" HorizontalAlignment="Left"  Background="Orange"  />
+                    <Separator Margin="0,2" Background="Gray" />
+
 
                 </StackPanel>
-                <Separator Margin="478,131,0,0"/>
+            </Grid>
+            <Grid Height="2145">
+                <!--<DataGrid x:Name="datagrid">
+                    
+                </DataGrid>-->
+                <StackPanel x:Name="prodPanel" Margin="543,10,224,42"/>
+                <Grid HorizontalAlignment="Left" Height="1171" Margin="117,10,0,0" VerticalAlignment="Top" Width="421">
+                    <Button Content="Şampuan" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,174,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="2'si 1 Arada Ürün" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,206,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="31"/>
+                    <Button Content="Şekillendirici" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="19,241,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="Saç Kremi" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
+
+                    <Button Content="Maske" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="25,374,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="Serum" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="1,406,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="31"/>
+                    <Button Content="Durulanmayan Bakım Ürünleri" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="32,468,0,0" VerticalAlignment="Top" Width="232" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="Saç Maskarası" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="25,439,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="Saç Boyası" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,576,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="GÜNLÜK BAKIM" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Width="167" FontFamily="Sitka Heading" Height="31"/>
+                    <Button Content="SAÇ BOYASI" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" FontWeight="ExtraBold"  HorizontalAlignment="Left" Margin="25,532,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26"/>
+                    <Button Content="ÖZEL BAKIM" FontSize="18"  BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4"  FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="29,337,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="26" />
+                    <Label Content="Kategoriler" FontSize="15" HorizontalAlignment="Left" Height="31" Margin="43,67,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" Width="171"/>
+                    <Separator  Width="80"  HorizontalAlignment="left" VerticalAlignment="Top" Margin="49,109,0,0"  FontWeight="ExtraBold" Background="Orange"/>
+
+
+
+
+
+                </Grid>
+
             </Grid>
 
 
             <!--<Grid Margin="10" Height="446">-->
 
-            <Grid Height="480">
-                <!--<DataGrid x:Name="datagrid">
-                    
-                </DataGrid>-->
-                <Label Name="lbl" >
-                    
-                </Label>
-            </Grid>
 
-            <StackPanel Margin="15">
-                <!--<DataGrid x:Name="DTGridEmp"  AutoGenerateColumns="False" Margin="0,13,0,0" Width="Auto" Height="568"  
-                       
-                          ColumnHeaderHeight="70"  
-                          FlowDirection="RightToLeft" SelectedIndex="0"   
-                          ColumnWidth=" 243" IsReadOnly="True" 
-                          >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                        <DataGridTextColumn Header="Context" Binding="{Binding Context}"  />
-                        <DataGridTemplateColumn Header="Photo" Width="Auto" IsReadOnly="True">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Path=Images}" Width="40" Height="40" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>-->
-                <!--<Label Content="{Binding Path=Name}" Height="170"/>-->
-            </StackPanel>
-            
-            
-            
-            
+
+
+
             <!--footer-->
             <!--<Grid Height="400" Background="black" Margin="0,100,0,0">
                 <Grid Width="1200">
@@ -165,9 +164,11 @@
 
 
 
-                    --><!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                    -->
+            <!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
                         <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
-                        </Button>--><!--
+                        </Button>-->
+            <!--
 
                     <StackPanel Orientation="Horizontal"  Height="60" HorizontalAlignment="Left" Width="1199" Margin="0,70,0,270" >
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >

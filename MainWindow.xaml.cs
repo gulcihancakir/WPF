@@ -22,7 +22,7 @@ namespace WPF
     public partial class MainWindow : Window
     {
         private int i;
-
+        bool isMenu4panelopen = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -71,13 +71,13 @@ namespace WPF
             
         }
 
-        private void opensampuanwindow(object sender, RoutedEventArgs e)
-        {
-            Sampuan sampuan = new Sampuan();
-            this.Visibility = Visibility.Hidden;
-            sampuan.Show();
+        //private void opensampuanwindow(object sender, RoutedEventArgs e)
+        //{
+        //    Sampuan sampuan = new Sampuan();
+        //    this.Visibility = Visibility.Hidden;
+        //    sampuan.Show();
 
-        }
+        //}
 
         private void opensearchbox(object sender, RoutedEventArgs e)
         {
@@ -104,6 +104,38 @@ namespace WPF
             TemsilciOlWindow temsilciOlWindow = new TemsilciOlWindow();
 
             temsilciOlWindow.Show();
+        }
+
+        private void menu4_click(object sender, RoutedEventArgs e)
+        {
+            //dispatcherTimer.Start();
+            if (isMenu4panelopen)
+            {
+                dockpanel.Height = 0;
+                if (dockpanel.Height == 0)
+                {
+
+                    isMenu4panelopen = false;
+                }
+
+            }
+            else if (!isMenu4panelopen)
+            {
+                dockpanel.Height = 140;
+                if (dockpanel.Height == 140)
+                {
+
+                    isMenu4panelopen = true;
+                }
+            }
+        }
+
+
+        private void ListBoxSampuan_Selected(object sender, RoutedEventArgs e)
+        {
+            Sampuan sampuan = new Sampuan();
+            this.Visibility = Visibility.Hidden;
+            sampuan.Show();
         }
     }
     }
