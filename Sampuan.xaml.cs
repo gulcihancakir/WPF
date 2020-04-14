@@ -21,7 +21,7 @@ namespace WPF
     /// </summary>
     public partial class Sampuan : Window
     {
-
+        bool isMenu4panelopen = false;
         webAPIEntities data = new webAPIEntities();
 
         public Sampuan()
@@ -279,6 +279,36 @@ namespace WPF
             this.Visibility = Visibility.Hidden;
 
             mainWindow.Show();
+        }
+
+        private void menu4_click(object sender, RoutedEventArgs e)
+        {
+            //dispatcherTimer.Start();
+            if (isMenu4panelopen)
+            {
+                dockpanel.Height = 0;
+                if (dockpanel.Height == 0)
+                {
+
+                    isMenu4panelopen = false;
+                }
+
+            }
+            else if (!isMenu4panelopen)
+            {
+                dockpanel.Height = 140;
+                if (dockpanel.Height == 140)
+                {
+
+                    isMenu4panelopen = true;
+                }
+            }
+        }
+        private void ListBoxSampuan_Selected(object sender, RoutedEventArgs e)
+        {
+            Sampuan sampuan = new Sampuan();
+            this.Visibility = Visibility.Hidden;
+            sampuan.Show();
         }
 
     }

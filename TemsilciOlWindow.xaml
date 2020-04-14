@@ -80,10 +80,10 @@
                             <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
                             <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
                             <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0">
-                                <Menu>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0" Click="menu4_click">
+                                <!--<Menu>
                                     <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
-                                </Menu>
+                                </Menu>-->
 
                             </MenuItem>
                             <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
@@ -98,10 +98,68 @@
 
                 </StackPanel>
             </StackPanel>
+            
             <Separator/>
+
+            <StackPanel>
+                <WrapPanel Height="0" Margin="75,0,127,0" Name="dockpanel" Width="1308"  >
+
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <Grid Height="155" Width="1404">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+
+                        </Grid.RowDefinitions>
+                        <Label Width="114" FontSize="13" FontWeight="bold" Height="26" Content=" GÜNLÜK BAKIM" />
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left"/>
+                        <Label Content="ÖZEL BAKIM" Grid.Column="1" FontSize="13" FontWeight="bold" Height="26" Margin="35,2,84,2"/>
+                        <Separator Background="Black" Margin="40,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="1"/>
+
+                        <Label Content="SAÇ BOYASI"  Grid.Column="2" Width="114" FontSize="13" FontWeight="bold" Height="26"/>
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="2"/>
+                        <Line X1="0" X2="0" Y1="0" Y2="50" Stroke="Gray" StrokeThickness="0.5" Margin="2,10,10,0" Grid.Column="3" Grid.RowSpan="2"/>
+
+                        <Label Content="İNDİRİMLİ ÜRÜNLER"  Grid.Column="3" FontSize="13" FontWeight="bold" Height="26" Margin="53,2,25,2"/>
+                        <Separator Margin="60,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="3"  Background="Black"/>
+
+
+
+                        <ListBox Height="139"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
+                            <ListBoxItem Selected="ListBoxSampuan_Selected" Content="Şampuan"/>
+                            <ListBoxItem Content="Saç Kremi" />
+                            <ListBoxItem Content="2'si 1 Arada Ürün"/>
+                            <ListBoxItem Content="Şekillendirici"/>
+                        </ListBox>
+
+
+                        <ListBox  Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" Margin="35,3,10,-26">
+                            <ListBoxItem  Content="Maske"/>
+                            <ListBoxItem Content="Serum"/>
+                            <ListBoxItem Content="Durulanmayan Bakım Ürünleri"/>
+
+
+                            <ListBoxItem Content="Saç Maskarası"/>
+                        </ListBox>
+                    </Grid>
+
+                </WrapPanel>
             <Grid Height="440">
                 <Image Source="kayit_ol-ust_banner.jpg" />
             </Grid>
+           </StackPanel>
             <Separator Foreground="Gray"/>
             <Grid Height="1057" >
                 <Grid  Margin="413,10,1285,493" >
@@ -262,6 +320,72 @@
                     <Button x:Name="kayitol" Height="50" Background="Orange" Foreground="white" BorderBrush="{x:Null}" Margin="988,206,682,135" >KAYIT OL</Button>
 
                 </Grid>
+                
+            </Grid>
+
+            <Grid Height="400" Background="black" Margin="0,100,0,0">
+                <Grid Width="1200">
+
+                    <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20"><Run Text="Bizi Sosyal Medyada Takip Edin"/></TextBlock>
+                    <Separator Foreground="White"  HorizontalAlignment="Left" Width="40" Margin="0,0,0,450"/>
+
+
+
+                    <!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                        <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                        </Button>-->
+
+                    <StackPanel Orientation="Horizontal"  Height="60" HorizontalAlignment="Left" Width="1199" Margin="0,70,0,270" >
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                            <Hyperlink NavigateUri="https://www.facebook.com/HuncaLife?fref=ts" Foreground="#FF040404" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                            <Hyperlink NavigateUri="https://twitter.com/HuncaLife" Foreground="#FF040404" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Twitter" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                            <Hyperlink NavigateUri="https://tr.pinterest.com/huncalife/" Foreground="#FF040404" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Pinterest" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                            <Hyperlink NavigateUri="https://www.instagram.com/huncalife/" Foreground="#FF040404" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="instagram" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                            <Hyperlink NavigateUri="https://www.youtube.com/user/HuncaLifeDunyasi" Foreground="#FF040404" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Youtube" Foreground="White" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <TextBox  Foreground="White" Margin="1370,52,0,307" FontSize="20" Text="Bize Ulaşın"/>
+                <Separator Foreground="White"  Margin="1000,20,0,475"  Width="30" />
+                <StackPanel Orientation="Horizontal" Margin="1368,98,346,175">
+                    <Label >
+                        <materialDesign:PackIcon Kind="Call" Foreground="white" Width="20" Height="20"/>
+                    </Label>
+                    <TextBlock FontSize="20" Foreground="White" Margin="5,5,0,0" Width="113"><Run Text="0850 333 20 30"/></TextBlock>
+                </StackPanel>
+
+
+
+
             </Grid>
 
 

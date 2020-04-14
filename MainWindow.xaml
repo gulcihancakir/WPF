@@ -120,7 +120,7 @@
                     <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
                     <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
                     <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
-                    <Grid Height="143" Width="1404">
+                    <Grid Height="159" Width="1404">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
 
@@ -150,7 +150,7 @@
 
 
 
-                        <ListBox Height="139"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
+                        <ListBox Height="149"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
                             <ListBoxItem Selected="ListBoxSampuan_Selected" Content="Şampuan"/>
                             <ListBoxItem Content="Saç Kremi" />
                             <ListBoxItem Content="2'si 1 Arada Ürün"/>
@@ -172,7 +172,7 @@
                 <Grid>
 
 
-                    <Image Name="picHolder" Stretch="Uniform"   Source="pics/1.jpg" Height="700"  />
+                    <Image Name="picHolder" Stretch="Uniform"   Source="pics/3.PNG" Height="700"  />
                     <Button Height="100" Width="100" Click="goNext" Background="{x:Null}" BorderBrush="{x:Null}"  Margin="1800,0,0,10" Opacity="0.5" >
                         <materialDesign:PackIcon Kind="ArrowRight" Width="80" Height="100"/>
                     </Button>

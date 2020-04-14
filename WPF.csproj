@@ -215,9 +215,6 @@
     <Resource Include="Images\korona-20200330130101.jpg" />
     <Resource Include="Images\ayin-urunu-20191023102253.jpg" />
     <Resource Include="Images\logo.png" />
-    <Resource Include="pics\2.jpg" />
-    <Resource Include="pics\1.jpg" />
-    <Resource Include="pics\3.jpg" />
     <Resource Include="tabmenupic\firsat_urunu1.PNG" />
     <Resource Include="tabmenupic\firsat_urunu2.PNG" />
     <Resource Include="tabmenupic\firsat_urunu3.PNG" />
@@ -237,6 +234,9 @@
     <Resource Include="anasayfa_pics\9.PNG" />
     <Resource Include="kayit_ol-ust_banner.jpg" />
     <Resource Include="temsilciOl.PNG" />
+    <Resource Include="pics\1.PNG" />
+    <Resource Include="pics\2.PNG" />
+    <Resource Include="pics\3.PNG" />
     <Content Include="WebAPIModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WebAPIModel.Context.cs</LastGenOutput>

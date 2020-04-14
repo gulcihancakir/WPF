@@ -17,8 +17,13 @@ namespace WPF
     /// <summary>
     /// Interaction logic for TemsilciOlWindow.xaml
     /// </summary>
+    /// 
+
     public partial class TemsilciOlWindow : Window
     {
+
+        bool isMenu4panelopen = false;
+
         public TemsilciOlWindow()
         {
             InitializeComponent();
@@ -26,12 +31,16 @@ namespace WPF
 
         private void temsilci_girisi(object sender, RoutedEventArgs e)
         {
+            TemsilciGirisi temsilciGirisi = new TemsilciGirisi();
 
+            temsilciGirisi.Show();
         }
 
         private void sepet_window_open(object sender, RoutedEventArgs e)
         {
-
+            SepetWindow sepetWindow = new SepetWindow();
+            this.Visibility = Visibility.Hidden;
+            sepetWindow.Show();
         }
 
         private void opensearchbox(object sender, RoutedEventArgs e)
@@ -39,13 +48,13 @@ namespace WPF
 
         }
 
-        private void opensampuanwindow(object sender, RoutedEventArgs e)
-        {
-            Sampuan sampuan = new Sampuan();
-            this.Visibility = Visibility.Hidden;
-            sampuan.Show();
+        //private void opensampuanwindow(object sender, RoutedEventArgs e)
+        //{
+        //    Sampuan sampuan = new Sampuan();
+        //    this.Visibility = Visibility.Hidden;
+        //    sampuan.Show();
 
-        }
+        //}
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -83,5 +92,37 @@ namespace WPF
 
             mainWindow.Show();
         }
+
+        private void ListBoxSampuan_Selected(object sender, RoutedEventArgs e)
+        {
+            Sampuan sampuan = new Sampuan();
+            this.Visibility = Visibility.Hidden;
+            sampuan.Show();
+        }
+
+        private void menu4_click(object sender, RoutedEventArgs e)
+        {
+            
+            if (isMenu4panelopen)
+            {
+                dockpanel.Height = 0;
+                if (dockpanel.Height == 0)
+                {
+
+                    isMenu4panelopen = false;
+                }
+
+            }
+            else if (!isMenu4panelopen)
+            {
+                dockpanel.Height = 160;
+                if (dockpanel.Height == 160)
+                {
+
+                    isMenu4panelopen = true;
+                }
+            }
+        }
+
     }
 }

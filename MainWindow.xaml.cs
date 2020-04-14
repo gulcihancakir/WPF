@@ -42,32 +42,30 @@ namespace WPF
 
         private void goBack(object sender, RoutedEventArgs e)
         {
-            i--; // this will decrease 1 from i
+            i--; 
 
 
-            // if the value of i is less than 1
-            // then give i the value of 6
+           
             if (i < 1)
             {
                 i = 3;
             }
-            picHolder.Source = new BitmapImage(new Uri(@"pics/" + i + ".jpg", UriKind.Relative));
+            picHolder.Source = new BitmapImage(new Uri(@"pics/" + i + ".PNG", UriKind.Relative));
         }
 
         private void goNext(object sender, RoutedEventArgs e)
         {
 
-            i++; // increase i by 1
+            i++; 
 
-            // if i's value gets larger than 6 then reset i back to 1
+        
 
             if (i > 3)
             {
                 i = 1;
             }
 
-            // change the picture according to the i's value
-            picHolder.Source = new BitmapImage(new Uri(@"pics/" + i + ".jpg", UriKind.Relative));
+            picHolder.Source = new BitmapImage(new Uri(@"pics/" + i + ".PNG", UriKind.Relative));
             
         }
 
