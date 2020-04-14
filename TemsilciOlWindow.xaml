@@ -29,8 +29,8 @@
                             Temsilci Girişi
                         </Button>
                     </StackPanel>
-                    <Label VerticalAlignment="Top" Height="100" Margin="150
-                   ,50,0,0" HorizontalAlignment="Left" Width="250">
+                    <Label VerticalAlignment="Top" Height="100" Margin="150 
+                   ,50,0,0" HorizontalAlignment="Left" Width="250" MouseDoubleClick="open_mainwindow">
                         <Label.Background>
                             <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
                         </Label.Background>

@@ -273,6 +273,14 @@ namespace WPF
             temsilciOlWindow.Show();
         }
 
+        private void open_mainwindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+
+            mainWindow.Show();
+        }
+
     }
 }
    
