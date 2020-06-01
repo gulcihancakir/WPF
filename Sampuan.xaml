@@ -149,9 +149,9 @@
 
                 </WrapPanel>
                 <Grid>
-                <Image  Stretch="Uniform"   Source="20180101_hair.jpg" />
+                    <Image  Stretch="Uniform"   Source="20180101_hair.jpg" />
 
-            </Grid>
+                </Grid>
             </StackPanel>
 
             <Grid  Height="50" Background="#FFF5EFEF"  >
@@ -175,10 +175,59 @@
                 </StackPanel>
             </Grid>
             <Grid Height="1977">
-                <!--<DataGrid x:Name="datagrid">
-                    
-                </DataGrid>-->
-                <StackPanel x:Name="prodPanel" Margin="543,10,224,42"/>
+               
+                <StackPanel Margin="538,0,228,0" >
+
+                        <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   x:Name="listdata" ItemsSource="{Binding Items}"  MouseDoubleClick="listdata_MouseDoubleClick"  BorderBrush="Gray" Background="{x:Null}" >
+                        
+                        <ListBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ListBox.RenderTransform>
+
+                            <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#FFB4B1B1" BorderThickness="1" Width="290">
+
+                                    <StackPanel Orientation="Vertical" Width="275" Height="423">
+                                    <Image Source="{Binding ProductImages}" />
+                                    <Label Content="{Binding ProductName}" />
+                                    <!--<RichTextBox x:Name="RichTextBox" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                                        <FlowDocument >
+                                            <Paragraph >
+                                                <Run Text="{Binding ProductName}" />
+                                            </Paragraph>
+                                        </FlowDocument>
+                                    </RichTextBox>-->
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="{Binding ProductPrice}"/>
+                                        <Label Content="-" />
+                                        <Label Content="{Binding ProductNewPrice}" />
+
+                                    </StackPanel>
+                                        <Button Content="Sepete Ekle" x:Name="btnId"  Click="SepeteEkleButton_Clicked" Background="Orange" Foreground="White" BorderBrush="{x:Null}" />
+
+                                    </StackPanel>
+                                </Border>
+
+                            </DataTemplate>
+                                
+                        </ListBox.ItemTemplate>
+
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+
+                </StackPanel>
+                
+                
                 <Grid HorizontalAlignment="Left" Height="1171" Margin="117,10,0,0" VerticalAlignment="Top" Width="421">
                     <Button Content="Şampuan" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,174,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26" Click="SampuanButton_Click"/>
                     <Button Content="2'si 1 Arada Ürün" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,206,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="31"/>
@@ -203,6 +252,9 @@
                 </Grid>
 
             </Grid>
+
+
+            <!--footer-->
             <Grid Height="400" Background="black" Margin="0">
                 <Grid Width="1200">
 

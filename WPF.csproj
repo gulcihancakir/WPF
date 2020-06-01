@@ -101,6 +101,18 @@
     <Compile Include="Category.cs">
       <DependentUpon>WebAPIModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\RestAPI.cs" />
+    <Compile Include="Data\SetProducts.cs" />
+    <Compile Include="Data\SetSepet.cs" />
+    <Compile Include="DetailWindow.xaml.cs">
+      <DependentUpon>DetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\Sepet.cs" />
+    <Compile Include="Model\SepetModel.cs" />
+    <Compile Include="Model\Siparis.cs" />
+    <Compile Include="Model\SiparisModel.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>WebAPIModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +148,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebAPIModel.edmx</DependentUpon>
     </Compile>
+    <Page Include="DetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -20,8 +20,31 @@
         WindowStartupLocation="Manual"
         Left="0" Top="0"
     Title="HuncaLife" Height="4000" Width="1943" Loaded="Window_Loaded" Icon="Images/icon.png" Background="white">
+    <Window.Resources>
+        <Storyboard x:Key="CarouselStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="CarouselTransform" 
+                Storyboard.TargetProperty="X"/>
+        </Storyboard>
+    </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
+            <!--<StackPanel Height="352">
+                <Canvas Margin="0,0,273,0">
+                    <StackPanel Name="Carousel" Orientation="Horizontal">
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform x:Name="CarouselTransform" />
+                        </StackPanel.RenderTransform>
+                        <Button Height="350" Width="1935" Content="Page1"/>
+                        <Button Height="350" Width="525" Content="Page2"/>
+                        <Button Height="350" Width="525" Content="Page3"/>
+                    </StackPanel>
+                    <Button Click="Left_Click" Content="Left" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="45">
+
+                    </Button>
+                    <Button Click="Right_Click" Content="Right" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Canvas.Left="1882" Canvas.Top="160"/>
+                </Canvas>
+            </StackPanel>-->
 
 
             <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
@@ -104,11 +127,8 @@
 
 
                 </StackPanel>
-               
 
-                   
 
-            
 
 
             </StackPanel>
@@ -180,7 +200,7 @@
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="80" Height="100"/>
                     </Button>
                 </Grid>
-             
+
                 <!--<Image>
                 <Image.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
@@ -203,6 +223,7 @@
                 </Image.Triggers>
                 </Image>-->
             </StackPanel>
+
             <StackPanel Margin="200,50,200,0">
                 <Grid>
                     <!--image-->
@@ -411,6 +432,7 @@
 
                 <!--</StackPanel>-->
             </Grid>
+           
             <Grid Height="400" Background="black" Margin="0,100,0,0">
                 <Grid Width="1200">
 
@@ -475,6 +497,8 @@
 
 
             </Grid>
+
+            
 
 
         </StackPanel>

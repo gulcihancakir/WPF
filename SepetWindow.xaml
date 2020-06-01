@@ -19,11 +19,11 @@
     
         WindowStartupLocation="Manual"
         Left="0" Top="0"
-    Title="HuncaLife" Height="4000" Width="1943"  Icon="Images/icon.png" Background="white">
+    Title="HuncaLife" Height="4000" Width="1943"  Icon="Images/icon.png" Background="white" Loaded="Window_Loaded">
     <ScrollViewer VerticalScrollBarVisibility="Auto" Foreground="#DD363434"   >
         <StackPanel Orientation="vertical">
 
-            <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
+            <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1" >
 
                 <Grid>
                     <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
@@ -89,10 +89,10 @@
                             <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
                             <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
                             <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
-                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0">
-                                <Menu>
+                            <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"  Click="menu4_click">
+                                <!--<Menu>
                                     <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
-                                </Menu>
+                                </Menu>-->
 
                             </MenuItem>
                             <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
@@ -113,6 +113,62 @@
 
             </StackPanel>
             <Separator/>
+            <StackPanel>
+                <WrapPanel Height="0" Margin="75,0,127,0" Name="dockpanel" Width="1308"  >
+
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                    <Grid Height="159" Width="1404">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+
+                        </Grid.RowDefinitions>
+                        <Label Width="114" FontSize="13" FontWeight="bold" Height="26" Content=" GÜNLÜK BAKIM" />
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left"/>
+                        <Label Content="ÖZEL BAKIM" Grid.Column="1" FontSize="13" FontWeight="bold" Height="26" Margin="35,2,84,2"/>
+                        <Separator Background="Black" Margin="40,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="1"/>
+
+                        <Label Content="SAÇ BOYASI"  Grid.Column="2" Width="114" FontSize="13" FontWeight="bold" Height="26"/>
+                        <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="2"/>
+                        <Line X1="0" X2="0" Y1="0" Y2="50" Stroke="Gray" StrokeThickness="0.5" Margin="2,10,10,0" Grid.Column="3" Grid.RowSpan="2"/>
+
+                        <Label Content="İNDİRİMLİ ÜRÜNLER"  Grid.Column="3" FontSize="13" FontWeight="bold" Height="26" Margin="53,2,25,2"/>
+                        <Separator Margin="60,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="3"  Background="Black"/>
+
+
+
+                        <ListBox Height="149"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
+                            <ListBoxItem Selected="ListBoxSampuan_Selected" Content="Şampuan"/>
+                            <ListBoxItem Content="Saç Kremi" />
+                            <ListBoxItem Content="2'si 1 Arada Ürün"/>
+                            <ListBoxItem Content="Şekillendirici"/>
+                        </ListBox>
+
+
+                        <ListBox  Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" Margin="35,3,10,-26">
+                            <ListBoxItem  Content="Maske"/>
+                            <ListBoxItem Content="Serum"/>
+                            <ListBoxItem Content="Durulanmayan Bakım Ürünleri"/>
+
+
+                            <ListBoxItem Content="Saç Maskarası"/>
+                        </ListBox>
+                    </Grid>
+
+                </WrapPanel>
+            
             <Grid  Height="50" Background="#FFF5EFEF"  >
                 <StackPanel Orientation="Horizontal" Margin="375,0,0,0" >
                     <Button Width="58" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="0,12,0,10">
@@ -123,8 +179,8 @@
                     <TextBlock Text="  Sepetim" Margin="0,15,0,0" FontSize="18" FontWeight="ExtraBold" Foreground="Black"/>
                 </StackPanel>
             </Grid>
-
-            <StackPanel Orientation="Vertical" Margin="368,0,300,-380" Width="1267">
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="368,0,300,-380" Width="1267" Visibility="Hidden">
                 <Grid Width="1260" Margin="0,30,0,0">
                     <TextBlock  FontSize="20" FontWeight="ExtraBold" Foreground="Black" Margin="20,10,0,40">SEPETİM</TextBlock>
                     <Separator  Foreground="Gray"/>
@@ -137,6 +193,97 @@
                 </Border>
                 <Button  Click="alisverise_devam_et" FontSize="17" Foreground="Orange" BorderBrush="Orange" Width="235" Content="Alışverişe devam et" Margin="850,75,0,0" Height="49"/>
             </StackPanel>
+            <!--<StackPanel Height="681">
+                <Image Source="{Binding ProductImages}"  x:Name="MyImage" Height="400" Width="400" Margin="-462,153,522,-153" />
+
+                <Label  x:Name="MyProductName" FontSize="18" Height="28" Margin="0,0,452,0" />
+                <StackPanel Orientation="Horizontal" Margin="10" Height="134" Width="1178">
+                    <Label     x:Name="MyProductPrice" FontSize="18" Width="92"/>
+                    <Label   FontSize="18" Width="134"/>
+                    <Label   x:Name="MyProductNewPrice" FontSize="18" Width="134"/>
+                </StackPanel>
+                <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                    <FlowDocument >
+                        <Paragraph >
+                            <Run x:Name="MyProductContext"  />
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+            </StackPanel>-->
+            <StackPanel>
+               
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   Width="1214" x:Name="listdata" ItemsSource="{Binding sepetItems}"     BorderBrush="Gray" Background="{x:Null}" >
+                    <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate >
+
+                            <Border BorderBrush="#FFB4B1B1" BorderThickness="1" Width="1100" Height="60" >
+
+                                <Grid Width="1100" >
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding ProductImages}" />
+                                        <Label Content="{Binding ProductName}" Grid.Column="1" />
+
+                                    <Label Content="{Binding ProductPrice}" Grid.Column="2"/>
+                                    <Label Content="    TL" Grid.Column="2"/>
+
+                                    <!--<Label Content="{Binding ProductPrice}"/>-->
+                                        <Border BorderBrush="Black" BorderThickness="1" Height="35" Grid.Column="3">
+                                            <StackPanel Orientation="Horizontal" Grid.Column="4">
+                                        
+                                            <Button x:Name="cmdUp"  Margin="5,5,0,5"  Width="20" Click="cmdUp_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0">
+                                                <materialDesign:PackIcon Kind="Plus" Width="15" Height="15" Foreground="Black" />
+                                            </Button>
+                                            <TextBlock x:Name="txtNum"  Margin="5,5,0,5"  Width="10" Text="0"  />
+
+
+                                            <Button x:Name="cmdDown" Margin="5,5,0,5"  Width="20" Click="cmdDown_Click"  Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" >
+                                                <materialDesign:PackIcon Kind="Minus" Width="15" Height="15" />
+                                            </Button>
+                                        </StackPanel>
+                                        </Border>
+                                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" x:Name="btntrash" Grid.Column="5" Click="DeleteSepet">
+                                        <materialDesign:PackIcon Kind="Trash" Width="25" Height="25"/>
+                                    </Button>
+
+
+
+                               
+                            </Grid>
+                            </Border>
+
+                        </DataTemplate>
+
+                </ListBox.ItemTemplate>
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="1"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+
+            </StackPanel>
+            <Button Content="Sepeti Temizle" Click="sepeti_temizle"/>
+            <Button Content="Alışverişi Tamamla" x:Name="btnId" Click="alışverişi_tamamla"/>
         </StackPanel>
 
     </ScrollViewer>

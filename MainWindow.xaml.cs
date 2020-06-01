@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -119,8 +120,8 @@ namespace WPF
             }
             else if (!isMenu4panelopen)
             {
-                dockpanel.Height = 140;
-                if (dockpanel.Height == 140)
+                dockpanel.Height = 160;
+                if (dockpanel.Height == 160)
                 {
 
                     isMenu4panelopen = true;
@@ -135,6 +136,35 @@ namespace WPF
             this.Visibility = Visibility.Hidden;
             sampuan.Show();
         }
+
+        private int currentElement = 0;
+
+        //private void Left_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (currentElement < 2)
+        //    {
+        //        currentElement++;
+        //        AnimateCarousel();
+        //    }
+        //}
+
+        //private void Right_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (currentElement > 0)
+        //    {
+        //        currentElement--;
+        //        AnimateCarousel();
+        //    }
+        //}
+
+        //private void AnimateCarousel()
+        //{
+        //    Storyboard storyboard = (this.Resources["CarouselStoryboard"] as Storyboard);
+        //    DoubleAnimation animation = storyboard.Children.First() as DoubleAnimation;
+        //    animation.To = -this.Width * currentElement;
+        //    storyboard.Begin();
+        //}
     }
-    }
+}
+    
 
