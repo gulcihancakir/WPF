@@ -13,6 +13,8 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF.Data;
+using WPF.Model;
 
 namespace WPF
 {
@@ -21,6 +23,7 @@ namespace WPF
     /// </summary>
     public partial class TemsilciGirisi : Window
     {
+        RestAPI restAPI = new RestAPI();
         public TemsilciGirisi()
         {
             InitializeComponent();
@@ -66,6 +69,27 @@ namespace WPF
                 // Update the window's non-client area to reflect the changes
                 SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE |
                       SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+            }
+        }
+
+        private void giris_yap(object sender, RoutedEventArgs e)
+        {
+           
+            var mydetails = restAPI.GetSignup();
+            foreach (var item in mydetails)
+            {
+                if((UserEmail.Text==item.Email) & (UserParola.Password==item.Parola))
+                {
+                    //MessageBox.Show("Succesfully");
+                    MainWindow main = new MainWindow();
+
+                    main.Show();
+                  
+                }
+                //else
+                //{
+                //    MessageBox.Show("Basarısız");
+                //}
             }
         }
     }

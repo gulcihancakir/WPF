@@ -35,33 +35,14 @@ namespace WPF
 
           
         }
-        //private void Create()
-        //{
-
-        //    HttpClient client = new HttpClient();
-
-
-        //}
+      
         public List<Sepet> Sepet;
         
 
         private void SepeteEkleButton_Clicked(object sender, RoutedEventArgs e)
         {
 
-            //var mydetails = btnId.DataContext as ProductModel;
-
-            //Sepet sepet = new Sepet()
-            //{
-            //    Images = mydetails.ProductImages,
-            //    Name = mydetails.ProductName,
-            //    Price = mydetails.ProductPrice,
-            //    new_Price = mydetails.ProductNewPrice,
-            //    Count = 2,
-
-
-            //};
-            //restAPI.PostSepet(sepet);
-
+            
 
             Button btnId = e.OriginalSource as Button;
             var mydetails = btnId.DataContext as ProductModel;
@@ -77,18 +58,19 @@ namespace WPF
 
             };
             restAPI.PostSepet(sepet);
-
+          
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
 
         {
-
             SetProducts setProducts = new SetProducts();
             listdata.ItemsSource = setProducts.GetAllItems();
             
 
         }
+
+       
 
         private void sepet_window_open(object sender, RoutedEventArgs e)
         {
@@ -162,7 +144,7 @@ namespace WPF
             detail.Show();
         }
 
-      
+        
     }
 }
    

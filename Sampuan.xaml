@@ -169,6 +169,7 @@
                     <Label Content="BAKIM-" FontWeight="Bold" FontSize="20"/>
                     <Label Content="ŞAMPUAN" FontWeight="Bold" FontSize="20"/>
                     <Separator Width="120" FontWeight="ExtraBold" HorizontalAlignment="Left"  Background="Orange"  />
+                 
                     <Separator Margin="0,2" Background="Gray" />
 
 

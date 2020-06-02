@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF.Data;
+using WPF.Model;
 
 namespace WPF
 {
@@ -22,6 +24,7 @@ namespace WPF
     public partial class TemsilciOlWindow : Window
     {
 
+        RestAPI restAPI = new RestAPI();
         bool isMenu4panelopen = false;
 
         public TemsilciOlWindow()
@@ -34,6 +37,23 @@ namespace WPF
             TemsilciGirisi temsilciGirisi = new TemsilciGirisi();
 
             temsilciGirisi.Show();
+        }
+
+        private void kayit_ol(object sender, RoutedEventArgs e)
+        {
+            Signup signup = new Signup()
+            {
+                Name = UserName.Text,
+                Surname = UserSurname.Text,
+                Email = UserEmail.Text,
+                Adress = UserAdress.Text,
+                Phone_Number = UserPhone.Text,
+                Parola = UserParola.Password,
+
+
+        };
+            restAPI.Signup(signup);
+
         }
 
         private void sepet_window_open(object sender, RoutedEventArgs e)

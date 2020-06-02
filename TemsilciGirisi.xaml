@@ -51,18 +51,18 @@
             </RichTextBox>
             <Label  FontSize="20" Content="Temsilci Numarası" Grid.Row="2" Margin="0,10,0,48" Grid.RowSpan="2"/>
             <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="3">
-            <TextBox x:Name="temsilci_no_box"  ></TextBox>
+                <TextBox x:Name="UserEmail" FontSize="18px" ></TextBox>
             </Border>
             <Label FontSize="20" Margin="0,10,0,0" Content="Şifre" Grid.Row="4" />
             <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="5">
                 <!--<TextBox  x:Name="temsilci_sifre" ></TextBox>-->
-                <PasswordBox  x:Name="temsilci_sifre"/>
+                <PasswordBox  x:Name="UserParola" FontSize="18px"/>
             </Border>
            
             <CheckBox Grid.Row="6" FontSize="15" Margin="0,10,0,0">Beni Hatırla</CheckBox>
-            <Button Grid.Row="7" BorderBrush="Orange" Background="White"  Foreground="orange" FontSize="18">Giriş Yap</Button>
+            <Button Grid.Row="7" BorderBrush="Orange"  Background="White"  Foreground="orange" FontSize="18" Click="giris_yap">Giriş Yap</Button>
             <Label Grid.Row="8" Margin="0,10,0,0">Henüz bir hesabınız yok mu? Hemen temsilci olmak için tıklayın!</Label>
-            <Button  Grid.Row="9"   BorderBrush="orange" Background="Orange"  Foreground="White" FontSize="18">Temsilci Ol</Button>
+            <Button  Grid.Row="9"   BorderBrush="orange" Background="Orange"  Foreground="White" FontSize="18" >Temsilci Ol</Button>
 
         </Grid>
     </Grid>

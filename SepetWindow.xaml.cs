@@ -81,24 +81,24 @@ namespace WPF
 
         }
 
-        //private void alisverisi_tamamla(object sender, RoutedEventArgs e)
-        //{
-        //    var data = setsepet.GetAllItems();
-        //    foreach (var item in data)
-        //    {
-        //      Images = item.ProductImages,
-        //        Name = item.ProductName,
-        //     Price = item.ProductPrice,
-        //        new_Price = item.ProductNewPrice,
-        //        Count = 2,
+        private void alisverisi_tamamla(object sender, RoutedEventArgs e)
+        {
+            //    var data = setsepet.GetAllItems();
+            //    foreach (var item in data)
+            //    {
+            //      Images = item.ProductImages,
+            //        Name = item.ProductName,
+            //     Price = item.ProductPrice,
+            //        new_Price = item.ProductNewPrice,
+            //        Count = 2,
 
 
-        //    };
+            //    };
             //api.PostSiparis(siparis);
 
-        //    sepeti_temizle(sender, e);
+            //    sepeti_temizle(sender, e);
 
-        //}
+        }
         public int NumValue
         {
             get { return _numValue; }

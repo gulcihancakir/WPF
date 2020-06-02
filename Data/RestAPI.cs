@@ -17,6 +17,7 @@ namespace WPF.Data
         HttpResponseMessage response;
         public List<Model.Product> Products;
         public List<Sepet> sepet;
+        public List<Signup> signup;
         public RestAPI()
         {
 
@@ -60,6 +61,19 @@ namespace WPF.Data
             return sepet;
         }
 
+        public List<Signup> GetSignup()
+        {
+            HttpResponseMessage response = client.GetAsync("api/signup").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var items = response.Content.ReadAsAsync<IEnumerable<Signup>>().Result;
+                signup = items as List<Signup>;
+
+            }
+
+            return signup;
+        }
+
         public void PostSepet(Sepet sepet)
         {
             string json = JsonConvert.SerializeObject(sepet, Formatting.Indented);
@@ -80,9 +94,24 @@ namespace WPF.Data
 
         }
 
+        public void Signup(Signup signup)
+        {
+            string json = JsonConvert.SerializeObject(signup, Formatting.Indented);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            var result = client.PostAsync("api/signup", content).Result;
 
 
 
+        }
+
+
+        public void Login(Login login)
+        {
+            string json = JsonConvert.SerializeObject(login, Formatting.Indented);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            var result = client.PostAsync("api/login", content).Result;
+
+        }
 
 
 
@@ -91,7 +120,6 @@ namespace WPF.Data
            
             GetProducts();
             GetSepet();
-
 
 
         }
