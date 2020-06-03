@@ -24,16 +24,20 @@ namespace WPF
     {
         private int i;
         bool isMenu4panelopen = false;
+
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+            
+    }
+
+    private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
 
+       
         //private void yeni_cikan_Click(object sender, RoutedEventArgs e)
         //{
 

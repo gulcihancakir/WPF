@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace WPF.Model
 {
-    class Login
+    class Category
     {
         public int Id { get; set; }
-        public string Email { get; set; }
-
-        public string Parola { get; set; }
-
+        public string Name { get; set; }
     }
 }

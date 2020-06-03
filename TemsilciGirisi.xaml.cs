@@ -74,13 +74,14 @@ namespace WPF
 
         private void giris_yap(object sender, RoutedEventArgs e)
         {
+
            
             var mydetails = restAPI.GetSignup();
             foreach (var item in mydetails)
             {
-                if((UserEmail.Text==item.Email) & (UserParola.Password==item.Parola))
+                if((Email.Text==item.Email) & (Parola.Password==item.Parola))
                 {
-                    //MessageBox.Show("Succesfully");
+                    //MessageBox.Show("Hoşgeldiniz",item.Name+item.Surname);
                     MainWindow main = new MainWindow();
 
                     main.Show();

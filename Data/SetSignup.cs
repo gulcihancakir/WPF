@@ -36,11 +36,14 @@ namespace WPF.Data
                 SignupModel signupItem = new SignupModel()
                 {
                  
-                    UserName=item.Name,
-                    UserSurname=item.Surname,
-                    UserAdress=item.Adress,
-                    UserEmail=item.Email,
-                    UserParola=item.Parola,
+                    Name=item.Name,
+                    Surname=item.Surname,
+                   Adress=item.Adress,
+                   Email=item.Email,
+                   Parola=item.Parola,
+                  
+
+               
 
 
                 };

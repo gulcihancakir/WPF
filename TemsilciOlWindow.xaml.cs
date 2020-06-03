@@ -49,6 +49,7 @@ namespace WPF
                 Adress = UserAdress.Text,
                 Phone_Number = UserPhone.Text,
                 Parola = UserParola.Password,
+                Login=false
 
 
         };

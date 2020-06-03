@@ -180,7 +180,7 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="368,0,300,-380" Width="1267" Visibility="Hidden">
+            <StackPanel Orientation="Vertical" Margin="368,0,300,-380" Width="1267" Name="stackpnl" Visibility="Hidden">
                 <Grid Width="1260" Margin="0,30,0,0">
                     <TextBlock  FontSize="20" FontWeight="ExtraBold" Foreground="Black" Margin="20,10,0,40">SEPETİM</TextBlock>
                     <Separator  Foreground="Gray"/>
@@ -193,26 +193,9 @@
                 </Border>
                 <Button  Click="alisverise_devam_et" FontSize="17" Foreground="Orange" BorderBrush="Orange" Width="235" Content="Alışverişe devam et" Margin="850,75,0,0" Height="49"/>
             </StackPanel>
-            <!--<StackPanel Height="681">
-                <Image Source="{Binding ProductImages}"  x:Name="MyImage" Height="400" Width="400" Margin="-462,153,522,-153" />
-
-                <Label  x:Name="MyProductName" FontSize="18" Height="28" Margin="0,0,452,0" />
-                <StackPanel Orientation="Horizontal" Margin="10" Height="134" Width="1178">
-                    <Label     x:Name="MyProductPrice" FontSize="18" Width="92"/>
-                    <Label   FontSize="18" Width="134"/>
-                    <Label   x:Name="MyProductNewPrice" FontSize="18" Width="134"/>
-                </StackPanel>
-                <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
-                    <FlowDocument >
-                        <Paragraph >
-                            <Run x:Name="MyProductContext"  />
-                        </Paragraph>
-                    </FlowDocument>
-                </RichTextBox>
-
-
-            </StackPanel>-->
-            <StackPanel Width="1189">
+          
+            
+            <StackPanel Width="1189" Name="stackpnl2" Visibility="Visible">
                 <TextBlock Text="SEPETİM" FontSize="20px" FontWeight="Black" Width="100" HorizontalAlignment="Left" />
                 <Grid Margin="85,0,142,0">
                     <Grid.ColumnDefinitions >
@@ -275,7 +258,7 @@
                                             <Button x:Name="cmdUp"  Margin="5,5,0,5"  Width="20" Click="cmdUp_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0">
                                                 <materialDesign:PackIcon Kind="Plus" Width="15" Height="15" Foreground="Black" />
                                             </Button>
-                                            <TextBlock x:Name="txtNum"  Margin="5,5,0,5"  Width="10" Text="0"  />
+                                            <TextBlock x:Name="txtNum" Margin="5,5,0,5"  Width="10" Text="1"  />
 
 
                                             <Button x:Name="cmdDown" Margin="5,5,0,5"  Width="20" Click="cmdDown_Click"  Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" >
@@ -301,18 +284,19 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                 </ListBox>
-            
 
-                 
-           
+
+
+                <Button Content="Sepeti Sıfırla" Click="sepeti_temizle" Width="200" Margin="-900,0,0,0"  />
+                <Button  Click="alisverise_devam_et" FontSize="17" Foreground="Orange" BorderBrush="Orange" Width="235" Content="Alışverişe devam et" Margin="850,75,0,0" Height="49"/>
+                <!--<Button Content="Alışverişe Devam Et" x:Name="btnId" Click="alisverisi_tamamla" Width="200"/>-->
 
             </StackPanel>
-            <Button Content="Sepeti Sıfırla" Click="sepeti_temizle" Width="200"  />
-            <Button Content="Alışverişe Devam Et" x:Name="btnId" Click="alisverisi_tamamla" Width="200"/>
+           
 
 
 
-            <Grid Height="400" Background="black" Margin="0,100,0,0">
+            <Grid Height="400" Background="black" Margin="0,400,0,0">
                 <Grid Width="1200">
 
                     <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20"><Run Text="Bizi Sosyal Medyada Takip Edin"/></TextBlock>

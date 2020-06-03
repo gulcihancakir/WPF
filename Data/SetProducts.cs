@@ -17,7 +17,7 @@ namespace WPF.Data
 
         public SetProducts()
         {
-           
+
             RestAPI = new RestAPI();
 
             //AddItems();
@@ -37,7 +37,7 @@ namespace WPF.Data
 
                 ProductModel productItem = new ProductModel()
                 {
-                    Id=item.Id,
+                    Id = item.Id,
                     ProductName = item.Name,
                     ProductPrice = item.Price,
                     ProductNewPrice = item.new_Price,
@@ -53,5 +53,41 @@ namespace WPF.Data
             }
             return Items;
         }
+
+        public ObservableCollection<ProductModel> GetFilterProduct(string name)
+        {
+            Items = new ObservableCollection<ProductModel>();
+            RestAPI = new RestAPI();
+            int search;
+
+            foreach (var item in RestAPI.GetProducts())
+            {
+                search = item.Name.IndexOf(name, 0, item.Name.Length);
+                if (search == -1)
+                {
+
+                }
+
+                else
+                {
+                    ProductModel productItem = new ProductModel()
+                    {
+                        Id = item.Id,
+                        ProductName = item.Name,
+                        ProductPrice = item.Price,
+                        ProductNewPrice = item.new_Price,
+                        ProductContext = item.Context,
+                        ProductStockCount = item.StockCount,
+                        ProductImages = item.Images,
+
+                    };
+                    Items.Add(productItem);
+                }
+
+
+            }
+            return Items;
+        }
     }
 }
+

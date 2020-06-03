@@ -8,14 +8,15 @@ namespace WPF.Model
 {
     class SignupModel
     {
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-        public string UserSurname { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
 
-        public string UserPhone_Number { get; set; }
-        public string UserAdress { get; set; }
-        public string UserEmail { get; set; }
+        public string Phone_Number { get; set; }
+        public string Adress { get; set; }
+        public string Email { get; set; }
 
-        public string UserParola { get; set; }
+        public string Parola { get; set; }
+       
     }
 }

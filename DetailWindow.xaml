@@ -4,89 +4,369 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-         Title="HuncaLife" Height="3280" Width="1943"  Icon="Images/icon.png" >
+         Title="HuncaLife" Height="3280" Width="1943"  Icon="Images/icon.png"  Loaded="Window_Loaded">
+    <Window.Resources>
+        <Storyboard x:Key="CarouselStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="CarouselTransform" 
+                Storyboard.TargetProperty="X"/>
+        </Storyboard>
+    </Window.Resources>
     <Grid>
-        <ScrollViewer>
-            <StackPanel Margin="20" >
-                <StackPanel Height="681">
-                    <Image Source="{Binding ProductImages}"  x:Name="MyImage" Height="400" Width="400" Margin="-462,153,522,-153" />
 
-                    <Label  x:Name="MyProductName" FontSize="18" Height="28" Margin="0,0,452,0" />
-                    <StackPanel Orientation="Horizontal" Margin="10" Height="134" Width="1178">
-                        <Label     x:Name="MyProductPrice" FontSize="18" Width="92"/>
-                        <Label   FontSize="18" Width="134"/>
-                        <Label   x:Name="MyProductNewPrice" FontSize="18" Width="134"/>
+
+        <ScrollViewer>
+
+            <StackPanel Margin="20" >
+                <StackPanel x:Name="Header"  Orientation="Vertical" Margin="200,1,200,1">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" Width="300" Margin="1158,15,67,106" >
+
+                            <Button Foreground="Orange" Width="145" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_ol">
+                                Temsilci Ol
+                            </Button>
+
+                            <Button Foreground="Orange" FontSize="15" Width="145" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="temsilci_girisi">
+                                Temsilci Girişi
+                            </Button>
+                        </StackPanel>
+                        <Label VerticalAlignment="Top" Height="100" Margin="150
+                   ,50,0,0" HorizontalAlignment="Left" Width="250">
+                            <Label.Background>
+                                <ImageBrush ImageSource="Images/logo.png" Stretch="Uniform"/>
+                            </Label.Background>
+                        </Label>
+
+
+
+
+                        <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="900,30,0,0" Width="60" Height="50" >
+                            <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
+                        </Button>
+                        <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1190,110,0,0">Ara</Label>
+
+                        <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1100,30,0,0" Width="60" Height="50">
+                            <materialDesign:PackIcon Kind="Notebook" Width="25" Height="25"/>
+                        </Button>
+                        <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1280,110,0,0" Content="Katalog"/>
+
+                        <Button  Background="{x:Null}" BorderBrush="{x:Null}" Margin="1300,30,0,0" Width="60" Height="50" Click="sepet_window_open">
+                            <materialDesign:PackIcon Kind="Basket" Width="25" Height="25"/>
+                        </Button>
+                        <Label FontSize="16" HorizontalAlignment="Stretch" Margin="1380,110,0,0">Sepet</Label>
+                    </Grid>
+
+                    <Separator Name="MySeparator" 
+               Height="4"
+               Width="1360"
+               HorizontalAlignment="Stretch"                   
+               Background="#FFA89E9E" Margin="150,10,90,0"  Visibility="Visible" >
+                        <Separator.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform />
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Separator.RenderTransform>
+                    </Separator>
+
+                    <!--menu-->
+                    <StackPanel x:Name="menu" Orientation="Horizontal" Width="1140" Margin="0,0,50,0">
+
+                        <DockPanel Width="1140">
+
+                            <Menu IsMainMenu="True" FontSize="13" FontWeight="ExtraBold" Background="White">
+
+                                <MenuItem x:Name="bir" Header="CİLT BAKIM" Margin="14,0,0,0"  Padding="2,0,0,0" ></MenuItem>
+                                <MenuItem x:Name="iki" Header="MAKYAJ" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                                <MenuItem x:Name="uc" Header="KİŞİSEL BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                                <MenuItem  x:Name="dort" Header="SAÇ BAKIM" Margin="50,0,0,0" Padding="2,0,0,0"  Click="menu4_click">
+                                    <!--<Menu>
+                                    <MenuItem Header="Şampuan" Click="opensampuanwindow"  />
+                                </Menu>-->
+
+                                </MenuItem>
+                                <MenuItem x:Name="bes" Header="KOKULAR" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                                <MenuItem x:Name="alti" Header="DİĞER" Margin="50,0,0,0" Padding="2,0,0,0" ></MenuItem>
+                                <MenuItem  x:Name="yedi" Header="DİNAMİK YAŞAM" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                                <MenuItem x:Name="sekiz" Header="OUTLET" Margin="50,0,0,0" Padding="2,0,0,0"></MenuItem>
+                                <MenuItem x:Name="dokuz" Header="FIRSAT KÖŞESİ" Margin="50,0,0,0" Padding="2,0,0,0" Foreground="Red"></MenuItem>
+
+                            </Menu>
+                        </DockPanel>
+
+
                     </StackPanel>
-                    <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
-                        <FlowDocument >
-                            <Paragraph >
-                                <Run x:Name="MyProductContext"  />
-                            </Paragraph>
-                        </FlowDocument>
-                    </RichTextBox>
-                    <Button Content="Sepete Ekle" x:Name="btnId"  Click="SepeteEkleButton_Clicked" Background="Orange" Foreground="White" BorderBrush="{x:Null}" />
+
 
 
 
                 </StackPanel>
 
-                <StackPanel Width="1486">
-                    <TabControl Margin="0,10,102,0" BorderBrush="{x:Null}" TabStripPlacement="Top"  >
-                        <TabControl.Resources>
-                            <Style TargetType="TabItem">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TabItem">
-                                            <Border Name="Border"  BorderBrush="{x:Null}" Background="{x:Null}" CornerRadius="4,4,0,0" Margin="2,0">
-                                                <ContentPresenter x:Name="ContentSite"
+                <!--slider-->
+                <StackPanel >
+                    <WrapPanel Height="0" Margin="75,0,127,0" Name="dockpanel" Width="1308"  >
+
+                        <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                        <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                        <!--<Separator Width="20" FontWeight="bold" Height="23"/>-->
+                        <Grid Height="159" Width="1404">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <Label Width="114" FontSize="13" FontWeight="bold" Height="26" Content=" GÜNLÜK BAKIM" />
+                            <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left"/>
+                            <Label Content="ÖZEL BAKIM" Grid.Column="1" FontSize="13" FontWeight="bold" Height="26" Margin="35,2,84,2"/>
+                            <Separator Background="Black" Margin="40,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="1"/>
+
+                            <Label Content="SAÇ BOYASI"  Grid.Column="2" Width="114" FontSize="13" FontWeight="bold" Height="26"/>
+                            <Separator  Background="Black" Margin="90,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="2"/>
+                            <Line X1="0" X2="0" Y1="0" Y2="50" Stroke="Gray" StrokeThickness="0.5" Margin="2,10,10,0" Grid.Column="3" Grid.RowSpan="2"/>
+
+                            <Label Content="İNDİRİMLİ ÜRÜNLER"  Grid.Column="3" FontSize="13" FontWeight="bold" Height="26" Margin="53,2,25,2"/>
+                            <Separator Margin="60,20,0,0" Width="50" HorizontalAlignment="Left" Grid.Column="3"  Background="Black"/>
+
+
+
+                            <ListBox Height="149"  Width="114" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1">
+                                <ListBoxItem Selected="ListBoxSampuan_Selected" Content="Şampuan"/>
+                                <ListBoxItem Content="Saç Kremi" />
+                                <ListBoxItem Content="2'si 1 Arada Ürün"/>
+                                <ListBoxItem Content="Şekillendirici"/>
+                            </ListBox>
+
+
+                            <ListBox  Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" Margin="35,3,10,-26">
+                                <ListBoxItem  Content="Maske"/>
+                                <ListBoxItem Content="Serum"/>
+                                <ListBoxItem Content="Durulanmayan Bakım Ürünleri"/>
+
+
+                                <ListBoxItem Content="Saç Maskarası"/>
+                            </ListBox>
+                        </Grid>
+
+                    </WrapPanel>
+
+
+                    <!--<StackPanel Height="705" Width="1166" Orientation="Horizontal">
+                        <Image Source="{Binding ProductImages}"  x:Name="MyImage" Width="574" Margin="0,98,700,153" />
+
+
+                        <Label  x:Name="MyProductName" FontSize="18" Height="28" Margin="0,0,452,0" />
+                        <StackPanel Orientation="Horizontal" Margin="10" Height="70" Width="1178">
+                            <Label     x:Name="MyProductPrice" FontSize="18" Width="92"/>
+                            <Label   Content="-" FontSize="18" Width="134"/>
+                            <Label   x:Name="MyProductNewPrice" FontSize="18" Width="134"/>
+                        </StackPanel>
+                        <RichTextBox x:Name="RichTextBox1" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                            <FlowDocument >
+                                <Paragraph >
+                                    <Run x:Name="MyProductContext"  />
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <Button Content="Sepete Ekle" x:Name="btnId"  Click="SepeteEkleButton_Clicked" Background="Orange" Foreground="White" BorderBrush="{x:Null}" />
+
+                    </StackPanel>-->
+
+                    <Grid Height="1091" >
+
+                        <Border BorderBrush="Gray" BorderThickness="1" Margin="381,91,1081,589" >
+                            <Image Source="{Binding ProductImages}"  x:Name="MyImage" Margin="9" />
+                        </Border>
+                        <Label  x:Name="MyProductName"  Height="50" Width="500"  FontSize="18" FontWeight="ExtraBold" Margin="854,118,370,923" />
+                        <Label Content="___________" FontSize="18" Foreground="Orange" Width="100" Height="37"  Margin="900,-20,800,737"/>
+
+                        <TextBlock Height="50" x:Name="MyProductPrice"  FontSize="14" Margin="949,186,886,855" Foreground="Gray" TextDecorations="Strikethrough"/>
+                        <Label Content="-" Margin="980,180,876,855" FontSize="14"/>
+                        <TextBlock FontSize="14"  Foreground="Orange" Height="50"  FontWeight="Bold"  x:Name="MyProductNewPrice" Margin="992,186,750,855" />
+
+
+                        <RichTextBox x:Name="RichTextBox1" FontSize="15"  FontStyle="Normal" Margin="939,250,268,684" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                            <FlowDocument >
+                                <Paragraph >
+                                    <Run x:Name="MyProductContext"  />
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+
+
+
+                        <Button Content="SEPETE EKLE"  Click="SepeteEkleButton_Clicked" Background="Orange" Foreground="White" Width="270" BorderBrush="{x:Null}" Height="Auto" Margin="910,450,616,589"  x:Name="btnId" />
+                        <Label Content="Paylaş:" Margin="950,530,0,498" FontWeight="Black"/>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="950,522,778,533" >
+                            <Hyperlink NavigateUri="https://www.facebook.com/HuncaLife?fref=ts" Foreground="White" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Facebook" Foreground="Orange" Height="25" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+                        <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" Margin="250,-19,0,0" >
+                            <Hyperlink NavigateUri="https://twitter.com/HuncaLife" Foreground="White" >
+                                <InlineUIContainer>
+                                    <materialDesign:PackIcon Kind="Twitter" Foreground="Orange" Height="33" Width="30"/>
+                                </InlineUIContainer>
+                            </Hyperlink>
+                        </Button>
+
+                    </Grid>
+
+                    
+                    <StackPanel Width="1486">
+                      
+                        <TabControl Margin="194,-850,102,0" BorderBrush="Gray" TabStripPlacement="Top" Height="90" >
+                            <TabControl.Resources>
+                                <Style TargetType="TabItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="TabItem">
+                                                <Border Name="Border"  BorderBrush="{x:Null}" Background="{x:Null}" CornerRadius="4,4,0,0" Margin="2,0">
+                                                    <ContentPresenter x:Name="ContentSite"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         ContentSource="Header"
                                         Margin="10,2"/>
 
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsSelected" Value="True">
+                                                        <Setter TargetName="Border" Property="Background" Value="Gray" />
 
-                                                </Trigger>
-                                                <Trigger Property="IsSelected" Value="False">
-                                                    <Setter TargetName="Border" Property="Background" Value="White" />
-                                                </Trigger>
-
-
-
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TabControl.Resources>
-
-                        <TabItem Header="Ürün Açıklamaları" >
-                            <RichTextBox x:Name="RichTextBox2" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
-                                <FlowDocument >
-                                    <Paragraph >
-                                        <Run x:Name="urun_aciklamalari"  />
-                                    </Paragraph>
-                                </FlowDocument>
-                            </RichTextBox>
+                                                    </Trigger>
+                                                    <Trigger Property="IsSelected" Value="False">
+                                                        <Setter TargetName="Border" Property="Background" Value="White" />
+                                                    </Trigger>
 
 
 
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TabControl.Resources>
 
-                        </TabItem>
-                        <TabItem Header="Ürün Kullanımı" >
+                            <TabItem Header="Ürün Açıklamaları" >
+                                <RichTextBox x:Name="RichTextBox2" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                                    <FlowDocument >
+                                        <Paragraph >
+                                            <Run x:Name="urun_aciklamalari"  />
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
 
-                        </TabItem>
-                        <TabItem Header="Ürün Yorumu">
-                            <Label Content="Ürün Yorumları Henüz Aktif Değildir"/>
-                        </TabItem>
-                    </TabControl>
+
+
+
+                            </TabItem>
+                            <TabItem Header="Ürün Kullanımı" >
+
+                            </TabItem>
+                            <TabItem Header="Ürün Yorumu">
+                                <Label Content="Ürün Yorumları Henüz Aktif Değildir"/>
+                            </TabItem>
+                        </TabControl>
+                       
+                    </StackPanel>
+                   
+
+                </StackPanel>
+                <StackPanel Height="352">
+                    <Canvas Margin="0,0,273,0" >
+                        <StackPanel Name="Carousel" Orientation="Horizontal" DataContext="{Binding Items}" Width="1628">
+                            <StackPanel.RenderTransform>
+                                <TranslateTransform x:Name="CarouselTransform" />
+                            </StackPanel.RenderTransform>
+                            <Image Source="{Binding ProductImages}" Width="100"/>
+                        </StackPanel>
+                        <Button Click="Left_Click" Content="Left" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="45">
+
+                        </Button>
+                        <Button Click="Right_Click" Content="Right" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Canvas.Left="1822" Canvas.Top="164"/>
+                    </Canvas>
                 </StackPanel>
 
 
+                <Grid Height="400" Background="black" Margin="0,100,0,0">
+                    <Grid Width="1200">
+
+                        <TextBlock Foreground="White" Margin="0,50,0,0" FontSize="20"><Run Text="Bizi Sosyal Medyada Takip Edin"/></TextBlock>
+                        <Separator Foreground="White"  HorizontalAlignment="Left" Width="40" Margin="0,0,0,450"/>
+
+
+
+                        <!--<Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                        <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                        </Button>-->
+
+                        <StackPanel Orientation="Horizontal"  Height="60" HorizontalAlignment="Left" Width="1199" Margin="0,70,0,270" >
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                                <Hyperlink NavigateUri="https://www.facebook.com/HuncaLife?fref=ts" Foreground="#FF040404" >
+                                    <InlineUIContainer>
+                                        <materialDesign:PackIcon Kind="Facebook" Foreground="White" Height="25" Width="30"/>
+                                    </InlineUIContainer>
+                                </Hyperlink>
+                            </Button>
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                                <Hyperlink NavigateUri="https://twitter.com/HuncaLife" Foreground="#FF040404" >
+                                    <InlineUIContainer>
+                                        <materialDesign:PackIcon Kind="Twitter" Foreground="White" Height="25" Width="30"/>
+                                    </InlineUIContainer>
+                                </Hyperlink>
+                            </Button>
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                                <Hyperlink NavigateUri="https://tr.pinterest.com/huncalife/" Foreground="#FF040404" >
+                                    <InlineUIContainer>
+                                        <materialDesign:PackIcon Kind="Pinterest" Foreground="White" Height="25" Width="30"/>
+                                    </InlineUIContainer>
+                                </Hyperlink>
+                            </Button>
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                                <Hyperlink NavigateUri="https://www.instagram.com/huncalife/" Foreground="#FF040404" >
+                                    <InlineUIContainer>
+                                        <materialDesign:PackIcon Kind="instagram" Foreground="White" Height="25" Width="30"/>
+                                    </InlineUIContainer>
+                                </Hyperlink>
+                            </Button>
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="62" Height="60" >
+                                <Hyperlink NavigateUri="https://www.youtube.com/user/HuncaLifeDunyasi" Foreground="#FF040404" >
+                                    <InlineUIContainer>
+                                        <materialDesign:PackIcon Kind="Youtube" Foreground="White" Height="25" Width="30"/>
+                                    </InlineUIContainer>
+                                </Hyperlink>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <TextBox  Foreground="White" Margin="1370,52,0,307" FontSize="20" Text="Bize Ulaşın"/>
+                    <Separator Foreground="White"  Margin="1000,20,0,475"  Width="30" />
+                    <StackPanel Orientation="Horizontal" Margin="1368,98,346,175">
+                        <Label >
+                            <materialDesign:PackIcon Kind="Call" Foreground="white" Width="20" Height="20"/>
+                        </Label>
+                        <TextBlock FontSize="20" Foreground="White" Margin="5,5,0,0" Width="113"><Run Text="0850 333 20 30"/></TextBlock>
+                    </StackPanel>
+
+
+
+
+                </Grid>
             </StackPanel>
         </ScrollViewer>
 

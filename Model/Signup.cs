@@ -17,5 +17,6 @@ namespace WPF.Model
         public string Email { get; set; }
 
         public string Parola { get; set; }
+   
     }
 }

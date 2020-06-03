@@ -26,6 +26,7 @@ namespace WPF
     /// </summary>
     public partial class Sampuan : Window
     {
+        SetProducts setProducts = new SetProducts();
         bool isMenu4panelopen = false;
         //webAPIEntities data = new webAPIEntities();
         RestAPI restAPI = new RestAPI();
@@ -57,17 +58,36 @@ namespace WPF
 
 
             };
+            //restAPI.PostSepet(sepet);
+            //restAPI.PostSepet(sepet);
+
+
+            SetSepet setSepet = new SetSepet();
+            var deneme = setSepet.GetAllItems();
+            foreach (var item in deneme)
+            {
+                if (item.ProductName == mydetails.ProductName && item.ProductPrice == mydetails.ProductPrice)
+                {
+
+
+                    restAPI.DeleteSepetItem(item.Id);
+
+                }
+            }
             restAPI.PostSepet(sepet);
-          
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
 
         {
-            SetProducts setProducts = new SetProducts();
+           
             listdata.ItemsSource = setProducts.GetAllItems();
-            
-
+            List<string> ml = new List<string>()
+            {
+                "350 ml","450 ml","500 ml"
+            };
+            cmb_filter.ItemsSource = ml;
         }
 
        
@@ -144,7 +164,12 @@ namespace WPF
             detail.Show();
         }
 
-        
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var name = cmb_filter.SelectedItem.ToString();
+            var data = setProducts.GetFilterProduct(name);
+            listdata.ItemsSource = data;
+        }
     }
 }
    

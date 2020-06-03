@@ -39,8 +39,17 @@ namespace WPF
             listdata.ItemsSource = setsepet.GetAllItems();
       
  
-
+            if(listdata.Items.Count==0)
+            {
+                stackpnl.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                stackpnl2.Visibility = Visibility.Visible;
+            }
         }
+
+        
 
         private void DeleteSepet(object sender, RoutedEventArgs e)
         {
@@ -112,9 +121,9 @@ namespace WPF
 
         public void  NumberUpDown()
         {
-           
+
             //txtNum.Text = _numValue.ToString();
-            
+
         }
 
         private void cmdUp_Click(object sender, RoutedEventArgs e)
@@ -125,8 +134,15 @@ namespace WPF
 
         private void cmdDown_Click(object sender, RoutedEventArgs e)
         {
-            NumValue--;
-            
+            NumValue--;           
+            Button btn = e.OriginalSource as Button;
+            var data = btn.DataContext as SepetModel;
+            api.DeleteSepetItem(data.Id);
+            listdata.ItemsSource = setsepet.GetAllItems();
+
+
+
+
         }
 
 
@@ -136,7 +152,8 @@ namespace WPF
         {
 
             //SetSepet setsepet = new SetSepet();
-            //sepetdata.ItemsSource = setsepet.GetAllItems();
+            listdata.ItemsSource = setsepet.GetAllItems();
+
 
         }
 

@@ -102,12 +102,15 @@
       <DependentUpon>WebAPIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\RestAPI.cs" />
+    <Compile Include="Data\SetCategories.cs" />
     <Compile Include="Data\SetProducts.cs" />
     <Compile Include="Data\SetSepet.cs" />
     <Compile Include="Data\SetSignup.cs" />
     <Compile Include="DetailWindow.xaml.cs">
       <DependentUpon>DetailWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\CategoryModel.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\Product.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Model\SignupModel.cs" />
     <Compile Include="Model\Siparis.cs" />
     <Compile Include="Model\SiparisModel.cs" />
+    <Compile Include="Model\StockUpdate.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>WebAPIModel.tt</DependentUpon>
     </Compile>

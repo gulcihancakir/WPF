@@ -18,6 +18,7 @@ namespace WPF.Data
         public List<Model.Product> Products;
         public List<Sepet> sepet;
         public List<Signup> signup;
+        public List<Category> category;
         public RestAPI()
         {
 
@@ -73,6 +74,18 @@ namespace WPF.Data
 
             return signup;
         }
+        public List<Category> GetCategory()
+        {
+            HttpResponseMessage response = client.GetAsync("api/categories").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var items = response.Content.ReadAsAsync<IEnumerable<Signup>>().Result;
+                category = items as List<Category>;
+
+            }
+
+            return category;
+        }
 
         public void PostSepet(Sepet sepet)
         {
@@ -112,7 +125,14 @@ namespace WPF.Data
             var result = client.PostAsync("api/login", content).Result;
 
         }
-
+        public void DeleteSepetItem(int id)
+        {           
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = new HttpResponseMessage();
+            string deleteUri = "api/sepet/" + id.ToString();
+            var result = client.DeleteAsync(deleteUri).Result;
+        }
+      
 
 
         private void GetData()

@@ -169,18 +169,19 @@
                     <Label Content="BAKIM-" FontWeight="Bold" FontSize="20"/>
                     <Label Content="ŞAMPUAN" FontWeight="Bold" FontSize="20"/>
                     <Separator Width="120" FontWeight="ExtraBold" HorizontalAlignment="Left"  Background="Orange"  />
-                 
+                    <ComboBox SelectionChanged="ComboBox_SelectionChanged"  materialDesign:HintAssist.Hint="MİKTAR" Text="Filtre"  Name="cmb_filter" Margin="854,0,72,0" />
+
                     <Separator Margin="0,2" Background="Gray" />
 
 
                 </StackPanel>
             </Grid>
             <Grid Height="1977">
-               
+
                 <StackPanel Margin="538,0,228,0" >
 
-                        <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   x:Name="listdata" ItemsSource="{Binding Items}"  MouseDoubleClick="listdata_MouseDoubleClick"  BorderBrush="Gray" Background="{x:Null}" >
-                        
+                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   x:Name="listdata" ItemsSource="{Binding Items}"  MouseDoubleClick="listdata_MouseDoubleClick"  BorderBrush="Gray" Background="{x:Null}" >
+
                         <ListBox.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform />
@@ -190,33 +191,36 @@
                             </TransformGroup>
                         </ListBox.RenderTransform>
 
-                            <ListBox.ItemTemplate>
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="#FFB4B1B1" BorderThickness="1" Width="290">
 
                                     <StackPanel Orientation="Vertical" Width="275" Height="423">
-                                    <Image Source="{Binding ProductImages}" />
-                                    <Label Content="{Binding ProductName}" />
-                                    <!--<RichTextBox x:Name="RichTextBox" FontSize="13"  FontStyle="Normal" Grid.Row="1" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
-                                        <FlowDocument >
-                                            <Paragraph >
-                                                <Run Text="{Binding ProductName}" />
-                                            </Paragraph>
-                                        </FlowDocument>
-                                    </RichTextBox>-->
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Content="{Binding ProductPrice}"/>
-                                        <Label Content="-" />
-                                        <Label Content="{Binding ProductNewPrice}" />
+                                        <Image Source="{Binding ProductImages}" />
+                                        <!--<Label Content="{Binding ProductName}" />-->
+                                        <RichTextBox x:Name="RichTextBox" FontSize="15"  FontStyle="Normal" Margin="0,0,10,0" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}">
+                                            <FlowDocument >
+                                                <Paragraph >
+                                                    <Run Text="{Binding ProductName}" />
+                                                </Paragraph>
+                                            </FlowDocument>
+                                        </RichTextBox>
+                                        <StackPanel Orientation="Horizontal" Margin="55,0,0,0">
+                                            <TextBlock Text="{Binding ProductPrice}" TextDecorations="Strikethrough " Foreground="Gray" FontSize="18px"/>
+                                            <TextBlock Text="TL" TextDecorations="Strikethrough " Foreground="Gray"  FontSize="18px"/>
+                                            <TextBlock Text="-"   FontSize="18px"/>
+                                            <TextBlock Text="{Binding ProductNewPrice}"  FontSize="18px"/>
+                                            <TextBlock Text="TL"  FontSize="18px"/>
 
-                                    </StackPanel>
+
+                                        </StackPanel>
                                         <Button Content="Sepete Ekle" x:Name="btnId"  Click="SepeteEkleButton_Clicked" Background="Orange" Foreground="White" BorderBrush="{x:Null}" />
 
                                     </StackPanel>
                                 </Border>
 
                             </DataTemplate>
-                                
+
                         </ListBox.ItemTemplate>
 
                         <ListBox.ItemsPanel>
@@ -227,8 +231,8 @@
                     </ListBox>
 
                 </StackPanel>
-                
-                
+
+
                 <Grid HorizontalAlignment="Left" Height="1171" Margin="117,10,0,0" VerticalAlignment="Top" Width="421">
                     <Button Content="Şampuan" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,174,0,0" VerticalAlignment="Top" Width="96" FontFamily="Sitka Heading" Height="26" Click="SampuanButton_Click"/>
                     <Button Content="2'si 1 Arada Ürün" FontSize="15" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF2390B4" HorizontalAlignment="Left" Margin="33,206,0,0" VerticalAlignment="Top" Width="144" FontFamily="Sitka Heading" Height="31"/>
