@@ -65,11 +65,8 @@
             <Button  Grid.Row="9"   BorderBrush="orange" Background="Orange"  Foreground="White" FontSize="18" >Temsilci Ol</Button>
 
         </Grid>
-        <StackPanel Background="White" Name="pnlUser" HorizontalAlignment="Left" Height="417" Margin="50,45,0,0" VerticalAlignment="Top" Width="470">
-            <Grid Height="100"/>
-            <Label x:Name="lbluser" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="148"/>
-            <Button x:Name="btncikis" Background="Orange" Foreground="White" Content="ÇIKIŞ YAP"/>
-        </StackPanel>
+   
+       
 
     </Grid>
 </Window>
